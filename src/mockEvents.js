@@ -1,5 +1,4 @@
-
-events = [
+export const mockEvents = [
   {
     user_id: 1,
     date: "May 21, 2023",

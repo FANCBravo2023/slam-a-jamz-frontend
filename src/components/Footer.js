@@ -4,8 +4,8 @@ const Footer = () => {
   return (
     <>
       <div className="footer">
-        <h1>A FAN*C LLC Product</h1>
-        <h1>© 2023</h1>
+        <h6>A FAN*C LLC Product</h6>
+        <h6>© 2023</h6>
       </div>
     </>
   )
