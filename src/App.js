@@ -10,6 +10,8 @@ import LandingPage from './pages/LandingPage'
 import NotFound from './pages/NotFound'
 import SignIn from './pages/SignIn'
 import SignUp from './pages/SignUp'
+import { mockEvents } from './mockEvents'
+import { mockUsers } from './mockUsers'
 import { Routes, Route } from 'react-router-dom'
 import { Container } from 'reactstrap'
 import './App.css';
