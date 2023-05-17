@@ -1,15 +1,14 @@
 import React from 'react'
-// import logo from '../assets/'
+import SJLive from '../assets/SJLive.jpg'
 
 const Header = () => {
   return (
     <>
       <div className="header">
-        {/* <img src="" /> */}
-        <h1>logo</h1>
+        <img src={ SJLive } alt='Slam-A-Jamz Logo' className='Logo'/>
         <div className="header_button_containers">
           <button className="header_buttons">Sign In</button>
-          <button className="header_buttons">Sign Un</button>
+          <button className="header_buttons">Sign Up</button>
         </div>
       </div>
     </>

@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react'
 import Footer from './components/Footer'
 import Header from './components/Header'
@@ -18,17 +17,17 @@ import { Container } from 'reactstrap'
 import './App.css';
 
 const App = () => {
+  const [events, setEvents] = useState({mockEvents})
   return(
     <>
       <Header />
       <Container className='my-5'>
         <Routes>
-          <Route path="/" element={<EventEdit />} />
+          <Route path="/" element={<LandingPage />} />
           <Route path="/eventedit" element={<EventEdit />} />
-          <Route path="/eventindex" element={<EventIndex />} />
+          <Route path="/eventindex" element={<EventIndex events={events}/>} />
           <Route path="/eventnew" element={<EventNew />} />
           <Route path="/eventshow" element={<EventShow />} />
-          <Route path="/landingpage" element={<LandingPage />} />
           <Route path="/signin" element={<SignIn />} />
           <Route path="/home" element={<Home/>}/>
           <Route path="/" element={<SignUp />} />
