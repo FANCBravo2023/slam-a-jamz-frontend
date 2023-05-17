@@ -10,6 +10,7 @@ import LandingPage from './pages/LandingPage'
 import NotFound from './pages/NotFound'
 import SignIn from './pages/SignIn'
 import SignUp from './pages/SignUp'
+import Home from './pages/Home'
 import { mockEvents } from './mockEvents'
 import { mockUsers } from './mockUsers'
 import { Routes, Route } from 'react-router-dom'
@@ -29,6 +30,7 @@ const App = () => {
           <Route path="/eventshow" element={<EventShow />} />
           <Route path="/landingpage" element={<LandingPage />} />
           <Route path="/signin" element={<SignIn />} />
+          <Route path="/home" element={<Home/>}/>
           <Route path="/" element={<SignUp />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
