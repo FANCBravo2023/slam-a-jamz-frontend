@@ -17,7 +17,10 @@ import { Container } from 'reactstrap'
 import './App.css';
 
 const App = () => {
+
   const [events, setEvents] = useState({mockEvents})
+  console.log(events)
+  const [users, setUsers] = useState({mockUsers})
   return(
     <>
       <Header />
@@ -25,9 +28,9 @@ const App = () => {
         <Routes>
           <Route path="/" element={<LandingPage />} />
           <Route path="/eventedit" element={<EventEdit />} />
-          <Route path="/eventindex" element={<EventIndex events={events}/>} />
+          <Route path="/eventindex" element={<EventIndex events={events} users={users} />} />
           <Route path="/eventnew" element={<EventNew />} />
-          <Route path="/eventshow" element={<EventShow />} />
+          <Route path="/eventshow/:id" element={<EventShow events={events} users={users}/>} />
           <Route path="/signin" element={<SignIn />} />
           <Route path="/home" element={<Home/>}/>
           <Route path="/" element={<SignUp />} />

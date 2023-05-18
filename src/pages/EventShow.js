@@ -1,10 +1,40 @@
-import React from 'react'
+import React, { useState } from "react";
+import { NavLink, useParams } from "react-router-dom";
+import { Card, CardImg, CardBody, CardTitle, CardSubtitle, Button } from "reactstrap";
 
-const EventShow = () => {
+const EventShow = ({ events, users }) => {
+  const { id } = useParams()
+  const currentEvent = events?.find((event) => event.id === +id)
+  const currentUser = users?.find((user) => user.id === +id)
+
   return (
     <>
-      <div className="show">
-        <h1>EventShow</h1>  
+      <div className="event-body">
+        {currentEvent && (
+          <Card style={{ width: "60rem" }} className="event-card">
+            <CardImg src={currentEvent.image} alt="Artist' image" />
+            <CardBody className="event-text event-font-size">
+              <div className="grid-row">
+                <div className="show-event-info">
+                  <CardTitle>
+                    <b>{currentUser.artist}</b>
+                  </CardTitle>
+                  <CardSubtitle>{currentEvent.venue}</CardSubtitle>
+                  <CardSubtitle>
+                    {currentEvent.date}, {currentEvent.time}
+                  </CardSubtitle>
+                  <CardSubtitle>{currentEvent.street}, {currentEvent.city}, {currentEvent.state}</CardSubtitle>
+                  <CardSubtitle>${currentEvent.price}</CardSubtitle>
+                </div>
+              </div>
+              <div className="event-footer">
+                <NavLink to={`/eventindex`}>
+                  <Button>Return to Show Listings</Button>
+                </NavLink>
+              </div>
+            </CardBody>
+          </Card>
+        )}
       </div>
     </>
   )
