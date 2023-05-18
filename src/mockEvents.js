@@ -1,6 +1,7 @@
 export const mockEvents = [
   {
-    user_id: 1,
+    id: 1,
+    user_id: 1, 
     date: "May 21, 2023",
     time: "8pm",
     venue: "Pages Arena",
@@ -10,6 +11,7 @@ export const mockEvents = [
     price: 94,
   },
   {
+    id: 2,
     user_id: 2,
     date: "May 28, 2023",
     time: "11pm",
@@ -20,6 +22,7 @@ export const mockEvents = [
     price: 35,
   },
   {
+    id:3,
     user_id: 3,
     date: "May 30, 2023",
     time: "10pm",
