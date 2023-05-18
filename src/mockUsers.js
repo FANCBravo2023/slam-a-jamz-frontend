@@ -1,9 +1,9 @@
-export const mockUsers = [
+const mockUsers = [
     {
         id: 1,
         email: "testing1@email.com",
         encrypted_password: "123",
-        artist: 'Lady Gada',
+        artist: 'Lady Nada',
         description: "It is Nada's first all- stadium concert tour and features a stage inspired by brutalist architecture. In line with the promoted album's themes, the show's narrative depicts a journey around trauma and healing. It is divided into distinct segments, each separated by a video introduction and a costume change.",
         genre: "Pop",
         image: "https://tse3.mm.bing.net/th?id=OIF.0Po9Ufx6yvmT5NAazJbdsQ&pid=Api&P=0&h=180"
@@ -26,3 +26,5 @@ export const mockUsers = [
         image: "https://c1.wallpaperflare.com/preview/865/148/852/artists-audience-audio-band-thumbnail.jpg"
     }
 ]
+
+export default mockUsers
