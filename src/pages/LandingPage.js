@@ -36,11 +36,11 @@ const LandingPage = () => {
         <img src={background} alt="background" 
         className='background_img'
         />
-        <div class="wrapper">
-          <div class="neon-wrapper">
-            <span class="txt" >fan*c</span>
-            <span class="gradient"></span>
-            <span class="dodge"></span>
+        <div className="wrapper">
+          <div className="neon-wrapper">
+            <span className="txt" >fan*c</span>
+            <span className="gradient"></span>
+            <span className="dodge"></span>
           </div>
         </div>
       </Plx>

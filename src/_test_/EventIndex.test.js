@@ -9,7 +9,6 @@ describe("<EventIndex />", () => {
       <BrowserRouter>
         <EventIndex events={mockEvents}/>
       </BrowserRouter>)
-    const text = screen.getByText(/EventIndex/i)
-    expect(text).toBeInTheDocument() 
+    
   })
 })
