@@ -15,6 +15,7 @@ import mockUsers from './mockUsers'
 import { Routes, Route } from 'react-router-dom'
 import { Container } from 'reactstrap'
 import './App.css';
+import ProtectedIndex from './pages/ProtectedIndex'
 
 const App = () => {
 
@@ -32,16 +33,19 @@ const App = () => {
   const createEvent= (event) =>{
 
   }
-  
+  const deleteEvent =(id) =>{
+
+  }
   return(
     <>
       <Header />
       <Container className='my-5'>
         <Routes>
           <Route path="/" element={<LandingPage />} />
-          <Route path="/eventedit/:id" element={<EventEdit events={events} updateEvent={updateEvent} />} />
+          <Route path="/eventedit/:id" element={<EventEdit events={events} updateEvent={updateEvent} deleteEvent={deleteEvent}/>} />
           <Route path="/eventindex" element={<EventIndex events={events} users={users} />} />
-          <Route path="/eventnew" element={<EventNew createEvent={createEvent} currentUser={currentUser} />} />
+          <Route path ="/protectedindex" element={<ProtectedIndex events={events} users={users} currentUser={currentUser}/>} />
+          <Route path="/eventnew" element={<EventNew createEvent={createEvent} users={users} />} />
           <Route path="/eventshow/:id" element={<EventShow events={events} users={users}/>} />
           <Route path="/signin" element={<SignIn />} />
           <Route path="/home" element={<Home/>}/>

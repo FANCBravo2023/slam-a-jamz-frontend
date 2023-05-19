@@ -42,9 +42,12 @@ const LandingPage = () => {
             <span className="gradient"></span>
             <span className="dodge"></span>
           </div>
+          
         </div>
       </Plx>
-    </div>
+      <br></br>
+    </div> 
+  
   ) 
 }
 
