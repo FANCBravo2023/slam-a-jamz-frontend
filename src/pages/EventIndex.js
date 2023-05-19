@@ -13,8 +13,6 @@ import {
 import { NavLink } from "react-router-dom"
 
   const EventIndex = ({ events, users}) => {
-    console.log(events)
-    console.log(users)
 
     // const [activeIndex, setActiveIndex] = useState(0)
     // const [animating, setAnimating] = useState(false)

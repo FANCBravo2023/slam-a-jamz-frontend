@@ -19,21 +19,27 @@ import './App.css';
 const App = () => {
 
   const [events, setEvents] = useState(mockEvents)
-  console.log(events)
+
   const [users, setUsers] = useState(mockUsers)
+
 
   const [currentUser, setCurrentUser] = useState({mockUsers})
 
-  const createEvent= (event) =>{
-    console.log(event)
+  const updateEvent = (event, id) => {
+
   }
+
+  const createEvent= (event) =>{
+
+  }
+  
   return(
     <>
       <Header />
       <Container className='my-5'>
         <Routes>
           <Route path="/" element={<LandingPage />} />
-          <Route path="/eventedit" element={<EventEdit />} />
+          <Route path="/eventedit/:id" element={<EventEdit events={events} updateEvent={updateEvent} />} />
           <Route path="/eventindex" element={<EventIndex events={events} users={users} />} />
           <Route path="/eventnew" element={<EventNew createEvent={createEvent} currentUser={currentUser} />} />
           <Route path="/eventshow/:id" element={<EventShow events={events} users={users}/>} />
