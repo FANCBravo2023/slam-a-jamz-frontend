@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import { Form, FormGroup, Input, Label, Button } from "reactstrap"
 import {useNavigate, useParams} from "react-router-dom"
 
-  const EventEdit = ({events, updateEvent}) => {
+  const EventEdit = ({events, updateEvent,deleteEvent}) => {
   const navigate = useNavigate()
 
   const { id } = useParams()
@@ -23,11 +23,15 @@ import {useNavigate, useParams} from "react-router-dom"
     setEditEvent({...editEvent, [e.target.name]: e.target.value})
   }
 
-  const handleSubmit = () => {
+  const handleSubmit = (e) => {
     updateEvent(editEvent, currentEvent.id)
-    navigate("/eventindex")
+    navigate("/protectedindex")
   } 
-
+  const handleDelete = (e) => {
+    e.preventDefault()
+    deleteEvent(id)
+    navigate('/protectedindex')
+  }
   return (
     <>
       <h1>Edit Show Listing</h1>
@@ -105,6 +109,7 @@ import {useNavigate, useParams} from "react-router-dom"
           </FormGroup>
           <Button onClick={handleSubmit} color="primary">Submit
         </Button>
+        <Button onClick={handleDelete} color ="primary">Delete</Button>
         </Form>      
       </div>        
     </>
