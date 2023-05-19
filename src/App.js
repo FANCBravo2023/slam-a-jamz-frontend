@@ -22,8 +22,13 @@ const App = () => {
   console.log(events)
   const [users, setUsers] = useState(mockUsers)
 
+
   const [currentUser, setCurrentUser] = useState({mockUsers})
 
+  const updateEvent = (event, id) => {
+    console.log("event: ", event)
+    console.log("id: ", id)
+  }
   const createEvent= (event) =>{
     console.log(event)
   }
@@ -33,7 +38,7 @@ const App = () => {
       <Container className='my-5'>
         <Routes>
           <Route path="/" element={<LandingPage />} />
-          <Route path="/eventedit" element={<EventEdit />} />
+          <Route path="/eventedit/:id" element={<EventEdit events={events} updateEvent={updateEvent} />} />
           <Route path="/eventindex" element={<EventIndex events={events} users={users} />} />
           <Route path="/eventnew" element={<EventNew createEvent={createEvent} currentUser={currentUser} />} />
           <Route path="/eventshow/:id" element={<EventShow events={events} users={users}/>} />
