@@ -19,19 +19,20 @@ import './App.css';
 const App = () => {
 
   const [events, setEvents] = useState(mockEvents)
-  console.log(events)
+
   const [users, setUsers] = useState(mockUsers)
 
 
   const [currentUser, setCurrentUser] = useState({mockUsers})
 
   const updateEvent = (event, id) => {
-    console.log("event: ", event)
-    console.log("id: ", id)
+
   }
+
   const createEvent= (event) =>{
-    console.log(event)
+
   }
+  
   return(
     <>
       <Header />

@@ -7,11 +7,9 @@ import {useNavigate, useParams} from "react-router-dom"
 
   const { id } = useParams()
   let currentEvent = events?.find((event) => event.id === +id)
-  // const currentUser = users?.find((user) => user.id === +id)
   
   const [editEvent, setEditEvent] = useState({
     id: Math.floor(Math.random() * Math.pow(10, 10)),
-    // user_id: currentUser?.id,
     date: currentEvent.date,
     time: currentEvent.time,
     venue: currentEvent.venue,
