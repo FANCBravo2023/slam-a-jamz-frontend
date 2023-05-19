@@ -18,13 +18,67 @@ import './App.css';
 import ProtectedIndex from './pages/ProtectedIndex'
 
 const App = () => {
+  const url = 'http://localhost:3000'
+  const [currentUser, setCurrentUser] = useState(null)
+  const [events, setEvents] = useState([])
 
-  const [events, setEvents] = useState(mockEvents)
+   // authentication methods
+  const signIn = (userInfo) => {
+    fetch(`${url}/signin`, {
+      body: JSON.stringify(userInfo),
+      headers: {
+        "Content-Type": 'application/json',
+        "Accept": 'application/json'
+      },
+      method: 'POST'
+    })
+    .then(response => {
+    // store the token
+    localStorage.setItem("token", response.headers.get("Authorization"))
+    return response.json()
+  })
+  .then(payload => {
+    setCurrentUser(payload)
+  })
+  .catch(error => console.log("login errors: ", error))
+  }
+
+  const signUp = (userInfo) => {
+    fetch(`${url}/signup`, {
+      body: JSON.stringify(userInfo),
+      headers: {
+        "Content-Type": 'application/json',
+        "Accept": 'application/json'
+      },
+      method: 'POST'
+    })
+    .then(response => {
+      // store the token
+    localStorage.setItem("token", response.headers.get("Authorization"))
+    return response.json()
+    })
+    .then(payload => {
+      setCurrentUser(payload)
+    })
+    .catch(error => console.log("login errors: ", error))
+  }
+
+  const logout = () => {
+    fetch(`${url}/logout`, {
+      headers: {
+        "Content-Type": 'application/json',
+        "Authorization": localStorage.getItem("token") //retrieve the token 
+      },
+      method: 'DELETE'
+    })
+    .then(payload => {
+    localStorage.removeItem("token")  // remove the token
+    setCurrentUser(null)
+  })
+  .catch(error => console.log("log out errors: ", error))
+  }
 
   const [users, setUsers] = useState(mockUsers)
-
-
-  const [currentUser, setCurrentUser] = useState({mockUsers})
 
   const updateEvent = (event, id) => {
 
@@ -47,9 +101,9 @@ const App = () => {
           <Route path ="/protectedindex" element={<ProtectedIndex events={events} users={users} currentUser={currentUser}/>} />
           <Route path="/eventnew" element={<EventNew createEvent={createEvent} users={users} />} />
           <Route path="/eventshow/:id" element={<EventShow events={events} users={users}/>} />
-          <Route path="/signin" element={<SignIn />} />
+          <Route path="/signin" element={<SignIn signin={signIn}/>} />
           <Route path="/home" element={<Home/>}/>
-          <Route path="/" element={<SignUp />} />
+          <Route path="/signup" element={<SignUp signup={signUp}/>} />
           <Route path="*" element={<NotFound />} />
         </Routes>
         </Container>
