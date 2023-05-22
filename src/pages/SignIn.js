@@ -1,37 +1,45 @@
-import React, { useRef } from 'react'
+import React, { useState } from 'react'
 import { Form, FormGroup, Label, Button, Input } from 'reactstrap'
-import { useNavigate } from 'react-router-dom'
+// import { useNavigate } from 'react-router-dom'
+// import { useRef } from 'react'
 
-const SignIn = ({ signin }) => {
-  const formRef = useRef()
-  const navigate = useNavigate()
-  const handleSubmit = (e) => {
-    //stop the default behavior of the form.  We want to send it with fetch.
-      e.preventDefault()
-      // store the form entries in a variable
-      const formData = new FormData(formRef.current)
-      // create and object from the entries
-      const data = Object.fromEntries(formData)
-      // store user's info in format that can be used with jwt.
-      const userInfo = {
-          "user":{ email: data.email, password: data.password }
-      }
-      signin(userInfo)
-      navigate("/")
-      e.target.reset()  // resets the input field
-  }
+const SignIn = ({ signIn }) => {
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+  // const formRef = useRef()
+  // const navigate = useNavigate()
+  // const handleSubmit = (e) => {
+  //   //stop the default behavior of the form.  We want to send it with fetch.
+  //     e.preventDefault()
+  //     // store the form entries in a variable
+  //     const formData = new FormData(formRef.current)
+  //     // create and object from the entries
+  //     const data = Object.fromEntries(formData)
+  //     // store user's info in format that can be used with jwt.
+  //     const userInfo = {
+  //         "user":{ email: data.email, password: data.password }
+  //     }
+  //     signin(userInfo)
+  //     navigate("/")
+  //     e.target.reset()  // resets the input field
+  // }
 
   return (
     <>
       <h1>Sign In</h1>
-      <Form ref={formRef} onSubmit={handleSubmit}>
+      <Form onSubmit={(e) => {
+        e.preventDefault()
+        signIn(email, password)
+      }}>
         <FormGroup>
           <Label for='email'>Email</Label>
           <Input
             id='email'
             name='email'
-            placeholder='email@domain.com'
+            placeholder='name@example.com'
             type='email'
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
           />
         </FormGroup>
         <FormGroup>
@@ -41,9 +49,11 @@ const SignIn = ({ signin }) => {
             name='password'
             placeholder='Password'
             type='password'
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
           />
         </FormGroup>
-        <Button value='signin' type='submit'>Submit</Button>
+        <Button>Submit</Button>
       </Form>
     </>
   )

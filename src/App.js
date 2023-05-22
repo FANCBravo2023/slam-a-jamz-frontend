@@ -12,71 +12,53 @@ import SignUp from './pages/SignUp'
 import Home from './pages/Home'
 import mockEvents from './mockEvents'
 import mockUsers from './mockUsers'
-import { Routes, Route } from 'react-router-dom'
+import { Routes, Route, useNavigate } from 'react-router-dom'
 import { Container } from 'reactstrap'
 import './App.css';
 import ProtectedIndex from './pages/ProtectedIndex'
 
 const App = () => {
   const url = 'http://localhost:3000'
+  const navigate = useNavigate()
   const [currentUser, setCurrentUser] = useState(null)
-  const [events, setEvents] = useState([])
+  const [events, setEvents] = useState(mockEvents)
 
    // authentication methods
-  const signIn = (userInfo) => {
-    fetch(`${url}/signin`, {
-      body: JSON.stringify(userInfo),
-      headers: {
-        "Content-Type": 'application/json',
-        "Accept": 'application/json'
-      },
-      method: 'POST'
-    })
-    .then(response => {
-    // store the token
-    localStorage.setItem("token", response.headers.get("Authorization"))
-    return response.json()
-  })
-  .then(payload => {
-    setCurrentUser(payload)
-  })
-  .catch(error => console.log("login errors: ", error))
+  
+  const signIn = (email, password) => {
+  
+    const user = mockUsers.find((user) => user.email === email) 
+      if (!user) {
+        return console.error('no exsisting user with provided email')
+      }
+      if (user.encrypted_password !== password) {
+        return console.error('incorrect password')
+      }
+      setCurrentUser(user)
+      navigate('/protectedindex')
   }
 
-  const signUp = (userInfo) => {
-    fetch(`${url}/signup`, {
-      body: JSON.stringify(userInfo),
-      headers: {
-        "Content-Type": 'application/json',
-        "Accept": 'application/json'
-      },
-      method: 'POST'
-    })
-    .then(response => {
-      // store the token
-    localStorage.setItem("token", response.headers.get("Authorization"))
-    return response.json()
-    })
-    .then(payload => {
-      setCurrentUser(payload)
-    })
-    .catch(error => console.log("login errors: ", error))
+  const signUp = (email, encrypted_password, artist, description, genre, image) => {
+    setCurrentUser({email: email, encrypted_password: encrypted_password, artist: artist, description: description, genre: genre, image: image})
+    navigate('/protectedindex')
   }
 
-  const logout = () => {
-    fetch(`${url}/logout`, {
-      headers: {
-        "Content-Type": 'application/json',
-        "Authorization": localStorage.getItem("token") //retrieve the token 
-      },
-      method: 'DELETE'
-    })
-    .then(payload => {
-    localStorage.removeItem("token")  // remove the token
-    setCurrentUser(null)
-  })
-  .catch(error => console.log("log out errors: ", error))
-  }
+  // logout function once we connect backend, pass logout function to header as props
+  // const logout = () => {
+  //   fetch('http://localhost:3000/logout', {
+  //     headers: {
+  //       "Content-Type": 'application/json',
+  //       "Authorization": localStorage.getItem("token") //retrieve the token 
+  //     },
+  //     method: 'DELETE'
+  //   })
+  //   .then(payload => {
+  //   localStorage.removeItem("token")  // remove the token
+  //   navigate('/')
+  //   setCurrentUser(null)
+  // })
+  // .catch(error => console.log("log out errors: ", error))
+  // } 
 
   const [users, setUsers] = useState(mockUsers)
 
@@ -90,20 +72,22 @@ const App = () => {
   const deleteEvent =(id) =>{
 
   }
+
+  /* do we want out landing page to be where user is returned to or home page to be home,  there is more content in home page then landing page, id sugest making home page the default return page ex.lines 116 */
   return(
     <>
-      <Header />
+      <Header current_user={currentUser}/>
       <Container className='my-5'>
         <Routes>
-          <Route path="/" element={<LandingPage />} />
+          <Route path="/" element={<LandingPage />} /> 
           <Route path="/eventedit/:id" element={<EventEdit events={events} updateEvent={updateEvent} deleteEvent={deleteEvent}/>} />
           <Route path="/eventindex" element={<EventIndex events={events} users={users} />} />
-          <Route path ="/protectedindex" element={<ProtectedIndex events={events} users={users} currentUser={currentUser}/>} />
+          <Route path ="/protectedindex" element={<ProtectedIndex events={events} currentUser={currentUser}/>} />
           <Route path="/eventnew" element={<EventNew createEvent={createEvent} users={users} />} />
           <Route path="/eventshow/:id" element={<EventShow events={events} users={users}/>} />
-          <Route path="/signin" element={<SignIn signin={signIn}/>} />
+          <Route path="/signin" element={<SignIn signIn={signIn}/>} />
           <Route path="/home" element={<Home/>}/>
-          <Route path="/signup" element={<SignUp signup={signUp}/>} />
+          <Route path="/signup" element={<SignUp signUp={signUp}/>} />
           <Route path="*" element={<NotFound />} />
         </Routes>
         </Container>

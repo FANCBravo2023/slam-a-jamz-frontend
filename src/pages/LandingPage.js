@@ -4,7 +4,7 @@ import background from "../assets/background.jpg"
 
 const LandingPage = () => {
   return (
-<div>
+
         <Plx
         className='plx1'
           parallaxData={[
@@ -32,21 +32,18 @@ const LandingPage = () => {
             }]
           }
         >
-        
-        <img src={background} alt="background" 
-        className='background_img'
-        />
         <div className="wrapper">
           <div className="neon-wrapper">
             <span className="txt" >fan*c</span>
             <span className="gradient"></span>
             <span className="dodge"></span>
           </div>
-          
         </div>
+        <img src={background} alt="background" 
+        className='background_img'
+        />
       </Plx>
-      <br></br>
-    </div> 
+    
   
   ) 
 }
