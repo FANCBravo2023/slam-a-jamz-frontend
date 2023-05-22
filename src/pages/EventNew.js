@@ -6,7 +6,7 @@ const EventNew = ({createEvent, currentUser}) => {
   const navigate = useNavigate()
   const [newEvent, setNewEvent] = useState({
     id: Math.floor(Math.random() * Math.pow(10, 10)),
-    user_id: currentUser?.id, //define current user in App.js
+    user_id: currentUser?.id, 
     date:"",
     time:"",
     venue:"",
@@ -20,7 +20,8 @@ const EventNew = ({createEvent, currentUser}) => {
     setNewEvent({...newEvent, [e.target.name]: e.target.value})
   }
 
-  const handleSubmit = () => {
+  const handleSubmit = (e) => {
+    e.preventDefault()
     createEvent(newEvent)
     navigate("/eventindex")
   }
@@ -29,7 +30,9 @@ const EventNew = ({createEvent, currentUser}) => {
     <>
       <h1>Create Show Listing</h1>
       <div>
-        <Form>
+        <Form
+        onSubmit={handleSubmit}
+        >
           <FormGroup>
             <Label for="date">Date</Label>
               <Input 
@@ -100,8 +103,7 @@ const EventNew = ({createEvent, currentUser}) => {
                 onChange={handleChange} 
                 value={newEvent.price}/>
           </FormGroup>
-          <Button onClick={handleSubmit} color="primary">Submit
-        </Button>
+          <Button color="primary">Submit</Button>
         </Form>      
       </div>        
     </>
