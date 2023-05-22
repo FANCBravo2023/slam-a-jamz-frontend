@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import { Form, FormGroup, Input, Label, Button } from "reactstrap"
 import {useNavigate, useParams} from "react-router-dom"
 
-  const EventEdit = ({events, updateEvent,deleteEvent}) => {
+  const EventEdit = ({events, updateEvent, deleteEvent}) => {
   const navigate = useNavigate()
 
   const { id } = useParams()
@@ -25,7 +25,7 @@ import {useNavigate, useParams} from "react-router-dom"
 
   const handleSubmit = (e) => {
     updateEvent(editEvent, currentEvent.id)
-    navigate("/protectedindex")
+    navigate(`/eventshow/${id}`)
   } 
   const handleDelete = (e) => {
     e.preventDefault()
