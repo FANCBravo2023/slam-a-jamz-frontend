@@ -1,11 +1,13 @@
-import React, { useState } from "react";
+import React from "react";
 import { NavLink, useParams } from "react-router-dom";
 import { Card, CardImg, CardBody, CardTitle, CardSubtitle, Button } from "reactstrap";
 
 const EventShow = ({ events, users }) => {
+  console.log(users)
   const { id } = useParams()
   const currentEvent = events?.find((event) => event.id === +id)
-  const currentUser = users?.find((user) => user.id === +id)
+ 
+  
 
   return (
     <>
@@ -17,8 +19,10 @@ const EventShow = ({ events, users }) => {
               <div className="grid-row">
                 <div className="show-event-info">
                   <CardTitle>
-                    <b>{currentUser.artist}</b>
+                    <b>{currentEvent.artist}</b>
                   </CardTitle>
+                  <CardSubtitle>{currentEvent.description}</CardSubtitle>
+                  <CardSubtitle>{currentEvent.genre}</CardSubtitle>
                   <CardSubtitle>{currentEvent.venue}</CardSubtitle>
                   <CardSubtitle>
                     {currentEvent.date}, {currentEvent.time}

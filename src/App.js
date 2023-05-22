@@ -22,6 +22,7 @@ const App = () => {
   const [currentUser, setCurrentUser] = useState(null)
   const [events, setEvents] = useState([])
   const [users] = useState([])
+  console.log(users)
 
   useEffect(() => {
     readEvent()
@@ -69,10 +70,9 @@ const App = () => {
   
 
 
-  const signUp = (email, encrypted_password, artist, description, genre, image) => {
+  const signUp = (email, encrypted_password) => {
     // setCurrentUser({email: email, encrypted_password: encrypted_password, artist: artist, description: description, genre: genre, image: image})
-    const userInfo =  { email, encrypted_password, artist, description, genre, image }
-  
+    const userInfo =  { email, encrypted_password}
  
    fetch(`${url}/signup`, {
      body: JSON.stringify(userInfo),
@@ -95,21 +95,21 @@ const App = () => {
   }
  
   // logout function once we connect backend, pass logout function to header as props
-  // const logout = () => {
-  //   fetch('http://localhost:3000/logout', {
-  //     headers: {
-  //       "Content-Type": 'application/json',
-  //       "Authorization": localStorage.getItem("token") //retrieve the token 
-  //     },
-  //     method: 'DELETE'
-  //   })
-  //   .then(payload => {
-  //   localStorage.removeItem("token")  // remove the token
-  //   navigate('/')
-  //   setCurrentUser(null)
-  // })
-  // .catch(error => console.log("log out errors: ", error))
-  // } 
+  const logout = () => {
+    fetch('http://localhost:3000/logout', {
+      headers: {
+        "Content-Type": 'application/json',
+        "Authorization": localStorage.getItem("token") //retrieve the token 
+      },
+      method: 'DELETE'
+    })
+    .then(payload => {
+    localStorage.removeItem("token")  // remove the token
+    navigate('/')
+    setCurrentUser(null)
+  })
+  .catch(error => console.log("log out errors: ", error))
+  } 
 
   
   const readEvent = () => {
