@@ -9,13 +9,14 @@ import LandingPage from './pages/LandingPage'
 import NotFound from './pages/NotFound'
 import SignIn from './pages/SignIn'
 import SignUp from './pages/SignUp'
-import Home from './pages/Home'
+// import Home from './pages/Home'
 import mockEvents from './mockEvents'
 import mockUsers from './mockUsers'
 import { Routes, Route, useNavigate } from 'react-router-dom'
 import { Container } from 'reactstrap'
-import './App.css';
 import ProtectedIndex from './pages/ProtectedIndex'
+import './App.css';
+
 
 const App = () => {
   const url = 'http://localhost:3000'
@@ -66,14 +67,13 @@ const App = () => {
 
   }
 
-  const createEvent= (event) =>{
-
+  const createEvent= (newEvent) =>{
+    console.log(newEvent)
   }
   const deleteEvent =(id) =>{
 
   }
 
-  /* do we want out landing page to be where user is returned to or home page to be home,  there is more content in home page then landing page, id sugest making home page the default return page ex.lines 116 */
   return(
     <>
       <Header current_user={currentUser}/>
@@ -86,7 +86,6 @@ const App = () => {
           <Route path="/eventnew" element={<EventNew createEvent={createEvent} users={users} />} />
           <Route path="/eventshow/:id" element={<EventShow events={events} users={users}/>} />
           <Route path="/signin" element={<SignIn signIn={signIn}/>} />
-          <Route path="/home" element={<Home/>}/>
           <Route path="/signup" element={<SignUp signUp={signUp}/>} />
           <Route path="*" element={<NotFound />} />
         </Routes>

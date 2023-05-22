@@ -8,7 +8,7 @@ import {
   Nav,
   NavItem,
   NavLink,
-  Button,
+  // Button,
 } from 'reactstrap'
 import { NavLink as RRNavLink } from 'react-router-dom'
 
@@ -18,13 +18,13 @@ const Header = ({ current_user }) => {
   const toggle = () => setIsOpen(!isOpen)
   return (
     <>
-      <Navbar expand='lg' className='shadow-lg' sticky="top">
+      <Navbar expand='lg' className='shadow-lg' sticky="top" >
       {/* <div className="header"> */}
         <NavbarBrand tag={RRNavLink} to='/'>
           <img src={ SJLive } alt='Slam-A-Jamz Logo' className='Logo'/>
         </NavbarBrand>
-        <NavbarToggler onClick={toggle} />
-          <Collapse isOpen={isOpen} navbar>
+        <NavbarToggler onClick={toggle} color="white"/>
+          <Collapse isOpen={isOpen} navbar color="light">
             <Nav className='ms-auto' navbar>
               <NavItem>
                 <NavLink tag={RRNavLink} to='/' className='text-white'>

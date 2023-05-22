@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { Form, FormGroup, Label, Input, Button } from 'reactstrap';
 
 const SignUp = ({signUp}) => {
@@ -9,15 +10,19 @@ const SignUp = ({signUp}) => {
     const [description, setDescription] = useState('')
     const [genre, setGenre] = useState('')
     const [image, setImage] = useState('')
-    //firstSignUp@email.com///123
+    const navigate = useNavigate()
+
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        signUp(email, encrypted_password, artist, description, genre, image)
+        navigate("/eventindex")
+      }
 
     return(
             <div className="signup-container">
                 <h3>Sign Up</h3>
-                <Form onSubmit={(e) => {
-                    e.preventDefault()
-                    signUp(email, encrypted_password, artist, description, genre, image)
-                }}>
+                <Form 
+                    onSubmit={handleSubmit}>
                     <FormGroup>
                         <Label for="email">Email</Label>
                         <Input 

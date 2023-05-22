@@ -1,10 +1,11 @@
 import React from 'react'
 import Plx from "react-plx"
+import { NavLink } from 'react-router-dom'
 import background from "../assets/background.jpg"
 
 const LandingPage = () => {
   return (
-
+    <>
         <Plx
         className='plx1'
           parallaxData={[
@@ -43,7 +44,30 @@ const LandingPage = () => {
         className='background_img'
         />
       </Plx>
-    
+      <br/>
+      <br/>
+      <br/>
+
+      <div className="Home">
+        <h1>SLAM A JAMZ</h1> 
+          
+        <NavLink
+          to={`/eventindex/`}>
+          <button>Upcoming Shows</button> 
+        </NavLink>
+
+        <div className="features">
+
+        </div>
+          <div className="concert_envy_meter">
+
+          </div>
+        <div className="Fanc">
+
+        </div>
+      </div>
+    </>
+
   
   ) 
 }

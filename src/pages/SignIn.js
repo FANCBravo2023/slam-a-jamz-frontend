@@ -1,13 +1,14 @@
 import React, { useState } from 'react'
 import { Form, FormGroup, Label, Button, Input } from 'reactstrap'
-// import { useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 // import { useRef } from 'react'
 
 const SignIn = ({ signIn }) => {
+  
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   // const formRef = useRef()
-  // const navigate = useNavigate()
+  const navigate = useNavigate()
   // const handleSubmit = (e) => {
   //   //stop the default behavior of the form.  We want to send it with fetch.
   //     e.preventDefault()
@@ -23,14 +24,16 @@ const SignIn = ({ signIn }) => {
   //     navigate("/")
   //     e.target.reset()  // resets the input field
   // }
-
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    signIn(email, password)
+    navigate("/eventindex")
+  }
   return (
     <>
       <h1>Sign In</h1>
-      <Form onSubmit={(e) => {
-        e.preventDefault()
-        signIn(email, password)
-      }}>
+      <Form 
+        onSubmit={handleSubmit}>
         <FormGroup>
           <Label for='email'>Email</Label>
           <Input
