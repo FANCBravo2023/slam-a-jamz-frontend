@@ -2,7 +2,7 @@ import { Card, CardBody, CardTitle, CardSubtitle, Button } from "reactstrap"
 import { NavLink } from "react-router-dom"
 
 
-const ProtectedIndex = ({ events, current_user, users}) => {
+const ProtectedIndex = ({ events,current_user}) => {
   // use the filter method to create a new array of events belonging to the user by using user_id.
     const myEvents = events?.filter(events => current_user?.id === events.user_id)
   return(
@@ -15,11 +15,27 @@ const ProtectedIndex = ({ events, current_user, users}) => {
             return (
               <Card key={index}>
                 <CardBody> 
-                  {users && (
-                    <CardTitle>
-                      {users?.find(user => user.id === event.user_id)?.artist}
-                    </CardTitle>
-                  )}    
+                  
+                  <CardTitle
+                    className="mb-2 text-muted"
+                    tag="h6">
+                    {event.artist}
+                  </CardTitle> 
+                  <CardSubtitle
+                    className="mb-2 text-muted"
+                    tag="h6">
+                    {event.description}
+                  </CardSubtitle>  
+                  <CardSubtitle
+                    className="mb-2 text-muted"
+                    tag="h6">
+                    {event.genre}
+                  </CardSubtitle>
+                  <CardSubtitle
+                    className="mb-2 text-muted"
+                    tag="h6">
+                    {event.image}
+                  </CardSubtitle>
                   <CardSubtitle
                     className="mb-2 text-muted"
                     tag="h6">

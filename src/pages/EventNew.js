@@ -7,13 +7,17 @@ const EventNew = ({createEvent, currentUser}) => {
   const [newEvent, setNewEvent] = useState({
     id: Math.floor(Math.random() * Math.pow(10, 10)),
     user_id: currentUser?.id, 
+    artist:"",
+    description:"",
+    genre:"",
+    image:"",
     date:"",
     time:"",
     venue:"",
     address:"",
     city:"",
     state:"",
-    price:0,
+    price:"0",
   })
 
   const handleChange = (e) => {
@@ -33,6 +37,46 @@ const EventNew = ({createEvent, currentUser}) => {
         <Form
         onSubmit={handleSubmit}
         >
+          <FormGroup>
+            <Label for="artist">Artist</Label>
+              <Input 
+                id='artist'
+                name='artist'
+                placeholder='enter artist name'
+                type="text"
+                onChange={handleChange} 
+                value={editEvent.artist}/>
+          </FormGroup>
+          <FormGroup>
+            <Label for="description">Description</Label>
+              <Input 
+                id='description'
+                name='description'
+                placeholder='Enter description'
+                type="text"
+                onChange={handleChange} 
+                value={editEvent.description}/>
+          </FormGroup>
+          <FormGroup>
+            <Label for="genre">Genre</Label>
+              <Input 
+                id='genre'
+                name='genre'
+                placeholder='Enter genre'
+                type="text"
+                onChange={handleChange} 
+                value={editEvent.genre}/>
+          </FormGroup>
+          <FormGroup>
+            <Label for="image">Image</Label>
+              <Input 
+                id='image'
+                name='image'
+                placeholder='Enter image'
+                type="text"
+                onChange={handleChange} 
+                value={editEvent.image}/>
+          </FormGroup>
           <FormGroup>
             <Label for="date">Date</Label>
               <Input 

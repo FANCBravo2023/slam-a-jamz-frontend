@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import { Form, FormGroup, Input, Label, Button } from "reactstrap"
 import {useNavigate, useParams} from "react-router-dom"
 
-  const EventEdit = ({events, updateEvent,deleteEvent}) => {
+  const EventEdit = ({events, updateEvent, deleteEvent}) => {
   const navigate = useNavigate()
 
   const { id } = useParams()
@@ -10,6 +10,10 @@ import {useNavigate, useParams} from "react-router-dom"
   
   const [editEvent, setEditEvent] = useState({
     id: Math.floor(Math.random() * Math.pow(10, 10)),
+    artist: currentEvent.artist,
+    description: currentEvent.description,
+    genre: currentEvent.genre,
+    image:currentEvent.iamge,
     date: currentEvent.date,
     time: currentEvent.time,
     venue: currentEvent.venue,
@@ -25,7 +29,7 @@ import {useNavigate, useParams} from "react-router-dom"
 
   const handleSubmit = (e) => {
     updateEvent(editEvent, currentEvent.id)
-    navigate("/protectedindex")
+    navigate(`/eventshow/${id}`)
   } 
   const handleDelete = (e) => {
     e.preventDefault()
@@ -37,6 +41,46 @@ import {useNavigate, useParams} from "react-router-dom"
       <h1>Edit Show Listing</h1>
       <div>
         <Form>
+        <FormGroup>
+            <Label for="artist">Artist</Label>
+              <Input 
+                id='artist'
+                name='artist'
+                placeholder='enter artist name'
+                type="text"
+                onChange={handleChange} 
+                value={editEvent.artist}/>
+          </FormGroup>
+          <FormGroup>
+            <Label for="description">Description</Label>
+              <Input 
+                id='description'
+                name='description'
+                placeholder='Enter description'
+                type="text"
+                onChange={handleChange} 
+                value={editEvent.description}/>
+          </FormGroup>
+          <FormGroup>
+            <Label for="genre">Genre</Label>
+              <Input 
+                id='genre'
+                name='genre'
+                placeholder='Enter genre'
+                type="text"
+                onChange={handleChange} 
+                value={editEvent.genre}/>
+          </FormGroup>
+          <FormGroup>
+            <Label for="image">Image</Label>
+              <Input 
+                id='image'
+                name='image'
+                placeholder='Enter image'
+                type="text"
+                onChange={handleChange} 
+                value={editEvent.image}/>
+          </FormGroup>
           <FormGroup>
             <Label for="date">Date</Label>
               <Input 
