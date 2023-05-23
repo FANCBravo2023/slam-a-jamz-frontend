@@ -5,7 +5,6 @@ import {useNavigate} from "react-router-dom"
 const EventNew = ({createEvent, currentUser}) => {
   const navigate = useNavigate()
   const [newEvent, setNewEvent] = useState({
-    id: Math.floor(Math.random() * Math.pow(10, 10)),
     user_id: currentUser?.id, 
     artist:"",
     description:"",
@@ -45,7 +44,7 @@ const EventNew = ({createEvent, currentUser}) => {
                 placeholder='enter artist name'
                 type="text"
                 onChange={handleChange} 
-                value={editEvent.artist}/>
+                value={newEvent.artist}/>
           </FormGroup>
           <FormGroup>
             <Label for="description">Description</Label>
@@ -55,7 +54,7 @@ const EventNew = ({createEvent, currentUser}) => {
                 placeholder='Enter description'
                 type="text"
                 onChange={handleChange} 
-                value={editEvent.description}/>
+                value={newEvent.description}/>
           </FormGroup>
           <FormGroup>
             <Label for="genre">Genre</Label>
@@ -65,7 +64,7 @@ const EventNew = ({createEvent, currentUser}) => {
                 placeholder='Enter genre'
                 type="text"
                 onChange={handleChange} 
-                value={editEvent.genre}/>
+                value={newEvent.genre}/>
           </FormGroup>
           <FormGroup>
             <Label for="image">Image</Label>
@@ -75,7 +74,7 @@ const EventNew = ({createEvent, currentUser}) => {
                 placeholder='Enter image'
                 type="text"
                 onChange={handleChange} 
-                value={editEvent.image}/>
+                value={newEvent.image}/>
           </FormGroup>
           <FormGroup>
             <Label for="date">Date</Label>

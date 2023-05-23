@@ -60,7 +60,7 @@ const Header = ({ current_user }) => {
                 ) : (
                 <>
                   <NavItem>
-                    <NavLink tag={RRNavLink} to='/signin' className='text-white'>
+                    <NavLink tag={RRNavLink} to='/login' className='text-white'>
                       Sign In
                     </NavLink>
                   </NavItem>

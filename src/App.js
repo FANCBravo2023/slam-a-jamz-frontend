@@ -22,18 +22,16 @@ const App = () => {
   const [currentUser, setCurrentUser] = useState(null)
   const [events, setEvents] = useState([])
   const [users] = useState([])
-  console.log(users)
+  
 
   useEffect(() => {
     readEvent()
   }, [])
 
  const url = "http://localhost:3000"
-  const signIn = (email, password) => {
-    const userInfo = {
-      user: { email, password },
-    }
-    fetch(`${url}/signin`, {
+  const signIn = ( userInfo) => {
+    
+    fetch(`${url}/login`, {
       body: JSON.stringify(userInfo),
       headers: {
         "Content-Type": 'application/json',
@@ -46,15 +44,16 @@ const App = () => {
       return response.json()
     })
     .then((payload) => {
-      if (payload?.error) {
-        console.error(payload.error)
-      } else {
+      // if (payload?.error) {
+      //   console.error(payload.error)
+      // } 
+      // else {
         setCurrentUser(payload)
         navigate('/protectedindex')
-      }
+        //
     })
     .catch((error) => console.log('login errors: ', error))
-    
+   
     // const user = mockUsers.find((user) => user.email === email) 
     //   if (!user) {
     //     return console.error('no exsisting user with provided email')
@@ -70,11 +69,10 @@ const App = () => {
   
 
 
-  const signUp = (email, encrypted_password) => {
+  const signUp = (userInfo) => {
     // setCurrentUser({email: email, encrypted_password: encrypted_password, artist: artist, description: description, genre: genre, image: image})
-    const userInfo =  { email, encrypted_password}
  
-   fetch(`${url}/signup`, {
+   fetch("http://localhost3000/signup", {
      body: JSON.stringify(userInfo),
      headers: {
        "Content-Type": 'application/json',
@@ -172,7 +170,7 @@ const App = () => {
           <Route path ="/protectedindex" element={<ProtectedIndex events={events} currentUser={currentUser}  />} />
           <Route path="/eventnew" element={<EventNew createEvent={createEvent} users={users} />} />
           <Route path="/eventshow/:id" element={<EventShow events={events} users={users} />} />
-          <Route path="/signin" element={<SignIn signIn={signIn}/>} />
+          <Route path="/login" element={<SignIn signIn={signIn}/>} />
           <Route path="/signup" element={<SignUp signUp={signUp}/>} />
           <Route path="*" element={<NotFound />} />
         </Routes>

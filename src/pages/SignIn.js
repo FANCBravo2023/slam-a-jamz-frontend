@@ -1,13 +1,10 @@
 import React, { useState } from 'react'
 import { Form, FormGroup, Label, Button, Input } from 'reactstrap'
 import { useNavigate } from 'react-router-dom'
-// import { useRef } from 'react'
+import { useRef } from 'react'
 
 const SignIn = ({ signIn }) => {
-  
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
-  // const formRef = useRef()
+  const formRef = useRef()
   const navigate = useNavigate()
   // const handleSubmit = (e) => {
   //   //stop the default behavior of the form.  We want to send it with fetch.
@@ -26,13 +23,21 @@ const SignIn = ({ signIn }) => {
   // }
   const handleSubmit = (e) => {
     e.preventDefault()
-    signIn(email, password)
+    const formData = new FormData(formRef.current)
+    const data = Object.fromEntries(formData)
+    const userInfo = {
+              "user":{ email: data.email, password: data.password }
+          }
+    signIn(userInfo)
+    console.log(userInfo)
     navigate("/eventindex")
   }
+  
   return (
     <>
       <h1>Sign In</h1>
-      <Form 
+      <form 
+      ref={formRef}
         onSubmit={handleSubmit}>
         <FormGroup>
           <Label for='email'>Email</Label>
@@ -41,8 +46,7 @@ const SignIn = ({ signIn }) => {
             name='email'
             placeholder='name@example.com'
             type='email'
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            // onChange={(e) => setEmail(e.target.value)}
           />
         </FormGroup>
         <FormGroup>
@@ -52,12 +56,11 @@ const SignIn = ({ signIn }) => {
             name='password'
             placeholder='Password'
             type='password'
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
+            // onChange={(e) => setPassword(e.target.value)}
           />
         </FormGroup>
         <Button>Submit</Button>
-      </Form>
+      </form>
     </>
   )
 }
