@@ -23,7 +23,7 @@ const App = () => {
     readEvent()
   }, [])
 
- const url = "http://localhost:3000"
+  const url = "http://localhost:3000"
 
   const login = (userInfo) => {
     fetch(`${url}/login`, {
@@ -77,6 +77,7 @@ const App = () => {
   })
   .catch(error => console.log("log out errors: ", error))
   } 
+
 
   const readEvent = () => {
     fetch(`${url}/events`)
