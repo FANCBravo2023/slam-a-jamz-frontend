@@ -1,12 +1,11 @@
 import React from 'react'
+import myGif from "../assets/Not_Found_Page_Gif.gif"
 
 const NotFound = () => {
   return (
     <>
         <div className="not_found">
-          <video width="750" height="500" controls >
-          <source src="https://pixabay.com/videos/dj-alien-disc-jockey-music-audio-105420/" type="video/mp4"/>
-          </video>
+          <img src={myGif} alt="Not-Found-Alien-Disc-Jockey" type="video/gif"/>
         </div>
     </>
   )

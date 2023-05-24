@@ -1,4 +1,4 @@
-import React, { useState , useEffect} from 'react'
+import { useState, useEffect } from 'react'
 import Footer from './components/Footer'
 import Header from './components/Header'
 import EventEdit from './pages/EventEdit'
@@ -7,121 +7,90 @@ import EventNew from './pages/EventNew'
 import EventShow from './pages/EventShow'
 import LandingPage from './pages/LandingPage'
 import NotFound from './pages/NotFound'
-import SignIn from './pages/SignIn'
+import Login from './pages/Login'
 import SignUp from './pages/SignUp'
-// import mockEvents from './mockEvents'
-// import mockUsers from './mockUsers'
-import { Routes, Route, useNavigate } from 'react-router-dom'
-import { Container } from 'reactstrap'
-import ProtectedIndex from './pages/ProtectedIndex'
+import { Routes, Route } from 'react-router-dom'
+import MyEvents from './pages/MyEvents'
 import './App.css';
 
 
 const App = () => {
-  const navigate = useNavigate()
+  // const navigate = useNavigate()
   const [currentUser, setCurrentUser] = useState(null)
-  const [events, setEvents] = useState([])
-  const [users] = useState([])
-  
+  const [events, setEvents] = useState()
 
   useEffect(() => {
     readEvent()
   }, [])
 
- const url = "http://localhost:3000"
-  const signIn = ( userInfo) => {
-    
+  const url = "http://localhost:3000"
+
+  const login = (userInfo) => {
     fetch(`${url}/login`, {
       body: JSON.stringify(userInfo),
       headers: {
-        "Content-Type": 'application/json',
-        "Accept": 'application/json'
+        "Content-Type": "application/json",
+        "Accept": "application/json"
       },
       method: 'POST'
     })
     .then((response) => {
-      localStorage.setItem('token', response.headers.get('Authorization'))
+      localStorage.setItem("token", response.headers.get("Authorization"))
       return response.json()
     })
     .then((payload) => {
-      // if (payload?.error) {
-      //   console.error(payload.error)
-      // } 
-      // else {
         setCurrentUser(payload)
-        navigate('/protectedindex')
-        //
     })
-    .catch((error) => console.log('login errors: ', error))
-   
-    // const user = mockUsers.find((user) => user.email === email) 
-    //   if (!user) {
-    //     return console.error('no exsisting user with provided email')
-    //   }
-    //   if (user.encrypted_password !== password) {
-    //     return console.error('incorrect password')
-    //   }
-    //   setCurrentUser(user)
-    //   navigate('/protectedindex')
+    .catch((error) => console.log("login errors: ", error))
   }
 
-
-  
-
-
-  const signUp = (userInfo) => {
-    // setCurrentUser({email: email, encrypted_password: encrypted_password, artist: artist, description: description, genre: genre, image: image})
- 
-   fetch("http://localhost3000/signup", {
+  const signup = (userInfo) => {
+   fetch(`${url}/signup`, {
      body: JSON.stringify(userInfo),
      headers: {
-       "Content-Type": 'application/json',
-       "Accept": 'application/json'
+       "Content-Type": "application/json",
+       "Accept": "application/json"
      },
      method: 'POST'
    })
    .then(response => {
-     // store the token
    localStorage.setItem("token", response.headers.get("Authorization"))
    return response.json()
  })
  .then(payload => {
    setCurrentUser(payload)
-   navigate('/protectedindex')
  })
  .catch(error => console.log("login errors: ", error))
   }
  
-  // logout function once we connect backend, pass logout function to header as props
   const logout = () => {
-    fetch('http://localhost:3000/logout', {
+    fetch(`${url}/logout`, {
       headers: {
-        "Content-Type": 'application/json',
-        "Authorization": localStorage.getItem("token") //retrieve the token 
+        "Content-Type": "application/json",
+        "Authorization": localStorage.getItem("token") 
       },
       method: 'DELETE'
     })
     .then(payload => {
-    localStorage.removeItem("token")  // remove the token
-    navigate('/')
+    localStorage.removeItem("token")
     setCurrentUser(null)
   })
   .catch(error => console.log("log out errors: ", error))
   } 
 
-  
+
   const readEvent = () => {
-    fetch("http://localhost:3000/events")
+    fetch(`${url}/events`)
       .then((response) => response.json())
       .then((payload) => {
         setEvents(payload)
       })
-      .catch((error) => console.log("Event read error:", error))
+      .catch((error) => console.log("Event read errors:", error))
   }
     
-  const createEvent = (newEvent) => {
-    fetch("http://localhost:3000/events", {
-      body: JSON.stringify(newEvent),
+  const createEvent = (createdEvent) => {
+    fetch(`${url}/events`, {
+      body: JSON.stringify(createdEvent),
       headers: {
         "Content-Type": "application/json"
       },
@@ -130,56 +99,54 @@ const App = () => {
     })
       .then((response) => response.json())
       .then(() => readEvent())
-      .catch((error) => console.log("Event create errors:", error))
+      .catch((error) => console.log("Create event errors:", error))
   }
 
-  const updateEvent = (editEvent, id) => {
-    fetch(`http://localhost:3000/editevents/${id}`, {
-      body: JSON.stringify(editEvent),
+  const updateEvent = (selectedEvent, id) => {
+    fetch(`${url}/events/${id}`, {
+      body: JSON.stringify(selectedEvent),
       headers: {
-        "Content-Type": "application/json"
+        "Content-Type": "application/json",
       },
       method: "PATCH"
     })
       .then((response) => response.json())
       .then(() => readEvent())
-      .catch((error) => console.log("Event update errors:", error))
+      .catch((error) => console.log("Updated event errors:", error))
   }
 
   const deleteEvent = (id) => {
-    fetch(`http://localhost:3000/events/${id}`, {
+    fetch(`${url}/events/${id}`, {
       headers: {
-        "Content-Type": "application/json"
+        "Content-Type": "application/json",
       },
       method: "DELETE"
     })
       .then((response) => response.json())
       .then(() => readEvent())
-      .catch((error) => console.log("delete errors:", error))
+      .catch((error) => console.log())
   }
-
 
   return(
     <>
-      <Header current_user={currentUser}/>
-      <Container className='my-5'>
-        <Routes>
-          <Route path="/" element={<LandingPage />} /> 
-          <Route path="/eventedit/:id" element={<EventEdit events={events} updateEvent={updateEvent} deleteEvent={deleteEvent}/>} />
-          <Route path="/eventindex" element={<EventIndex events={events} users={users} />} />
-          <Route path ="/protectedindex" element={<ProtectedIndex events={events} currentUser={currentUser}  />} />
-          <Route path="/eventnew" element={<EventNew createEvent={createEvent} users={users} />} />
-          <Route path="/eventshow/:id" element={<EventShow events={events} users={users} />} />
-          <Route path="/login" element={<SignIn signIn={signIn}/>} />
-          <Route path="/signup" element={<SignUp signUp={signUp}/>} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-        </Container>
+      <Header currentUser={currentUser} logout={logout}/>
+      <div className="wrapper">
+      <Routes>
+        <Route path="/" element={<LandingPage />} />
+        <Route path="/login" element={<Login login={login} /> } />
+        <Route path="/signup" element={<SignUp signup={signup} /> } />
+        <Route path="/eventindex" element={<EventIndex events={events} />} />
+        <Route path="/eventshow/:id" element={<EventShow events={events} />} />
+        <Route path="/eventnew" element={<EventNew createEvent={createEvent} currentUser={currentUser} />} />
+        <Route path="/eventedit/:id" element={<EventEdit events={events} updateEvent={updateEvent} currentUser={currentUser} deleteEvent={deleteEvent} />} />
+        <Route path="/myevents" element={<MyEvents events={events} currentUser={currentUser} />} />
+          
+        <Route path="*" element={<NotFound />} />
+      </Routes>
       <Footer />
+      </div>
     </>
   )
 }
 
 export default App
-
-

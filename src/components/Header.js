@@ -1,6 +1,6 @@
-import SJLive from '../assets/SJLive.jpg'
+import SJLive from "../assets/SJLive.jpg"
 import React, { useState } from 'react'
-import {
+import { 
   Collapse,
   Navbar,
   NavbarToggler,
@@ -8,20 +8,18 @@ import {
   Nav,
   NavItem,
   NavLink,
-  // Button,
-} from 'reactstrap'
-import { NavLink as RRNavLink } from 'react-router-dom'
+  Button} from "reactstrap"
+import { NavLink as RRNavLink } from "react-router-dom"
 
 
-const Header = ({ current_user }) => {
+const Header = ({currentUser, logout}) => {
   const [isOpen, setIsOpen] = useState(false)
   const toggle = () => setIsOpen(!isOpen)
   return (
     <>
-      <Navbar expand='lg' className='shadow-lg' sticky="top" >
-      {/* <div className="header"> */}
-        <NavbarBrand tag={RRNavLink} to='/'>
-          <img src={ SJLive } alt='Slam-A-Jamz Logo' className='Logo'/>
+    <Navbar expand='lg' className='shadow-lg' sticky="top" >
+      <NavbarBrand tag={RRNavLink} to="/">
+        <img src={SJLive} alt="Slam-a-Jamz Logo" className="Logo" />
         </NavbarBrand>
         <NavbarToggler onClick={toggle} color="white"/>
           <Collapse isOpen={isOpen} navbar color="light">
@@ -36,7 +34,7 @@ const Header = ({ current_user }) => {
                   Events
                 </NavLink>
               </NavItem>
-              {current_user ? (
+              {currentUser ? (
                 <>
                   <NavItem>
                     <NavLink tag={RRNavLink} to='/eventnew' className='text-white'>
@@ -44,18 +42,18 @@ const Header = ({ current_user }) => {
                     </NavLink>
                   </NavItem>
                   <NavItem>
-                    <NavLink tag={RRNavLink} to='/protectedindex' className='text-white'>
+                    <NavLink tag={RRNavLink} to='/myevents' className='text-white'>
                       My Event Listings
                     </NavLink>
                   </NavItem>
-                  {/* <NavItem>
+                  <NavItem>
                     <Button 
                     color='danger'
                     onClick={logout}
                     >
                       Logout
                     </Button>
-                  </NavItem> */}
+                  </NavItem>
                 </>
                 ) : (
                 <>
@@ -73,9 +71,9 @@ const Header = ({ current_user }) => {
               )}
             </Nav>
           </Collapse>
-      {/* </div> */}
+      
     </Navbar>
-    </>
+      </>
   )
 }
 
