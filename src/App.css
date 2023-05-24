@@ -1,4 +1,63 @@
+/* F820F4, #03CB83, #42C2F3, #014DFB, #0B3945 (edited)  */
+.web-features{
+  background-color: #0B3945;
+  height: 450px;
+  width: 70%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 15px;
+  margin-left: 15%;
+  margin-top: 100px;
+  border-radius: 10px;
+}
 
+.web-features h1, h2, p, a {
+  text-align: center;
+  padding: 15px;
+  background: transparent;
+}
+
+.concert-envy-meter{
+  background-color: #0B3945;
+  height: 350px;
+  width: 60%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 15px;
+  margin-top: 50px;
+  margin-left: 20%;
+  border-radius: 10px;
+}
+
+.dev-team{
+  background-color: #0B3945;
+  height: 500px;
+  width: 70%;
+  margin-left: 15%;
+  margin-top: 50px;
+  border-radius: 10px;
+}
+.dev-container{
+  background-color: #0B3945;
+  display: flex;
+  margin: 10px;
+  justify-content: space-between;
+}
+.dev{
+  height: 380px;
+  margin: 10px;
+  text-align: center;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.dev-image{
+  height: 100px;
+  width: 100px;
+  z-index: 2;
+}
 .card {
   margin: 2rem 0;
 }
@@ -45,7 +104,7 @@
   height: 700px;
 }
 
-.wrapper {
+/* .wrapper {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -95,7 +154,7 @@
   to {
       transform: translate(50%,50%);
   }
-}
+} */
 
 .not_found_video{
   object-fit: cover;
