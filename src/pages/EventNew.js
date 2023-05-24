@@ -1,12 +1,11 @@
 import React, {useState} from 'react'
-import { Form, FormGroup, Input, Label, Button } from "reactstrap"
+import { Form, FormGroup, Label, Input, Button } from "reactstrap"
 import {useNavigate} from "react-router-dom"
 
-const EventNew = ({createEvent, currentUser}) => {
+const EventNew = ({ createEvent, currentUser }) => {
   const navigate = useNavigate()
   const [newEvent, setNewEvent] = useState({
-    id: Math.floor(Math.random() * Math.pow(10, 10)),
-    user_id: currentUser?.id, 
+    user_id: currentUser?.id,
     artist:"",
     description:"",
     genre:"",
@@ -14,10 +13,10 @@ const EventNew = ({createEvent, currentUser}) => {
     date:"",
     time:"",
     venue:"",
-    address:"",
+    street:"",
     city:"",
     state:"",
-    price:"0",
+    price:"0"
   })
 
   const handleChange = (e) => {
@@ -27,129 +26,160 @@ const EventNew = ({createEvent, currentUser}) => {
   const handleSubmit = (e) => {
     e.preventDefault()
     createEvent(newEvent)
-    navigate("/eventindex")
+    navigate("/myevents")
   }
 
   return (
     <>
-      <h1>Create Show Listing</h1>
-      <div>
-        <Form
+      <h1>Create Event Listing</h1>
+      <Form
         onSubmit={handleSubmit}
-        >
-          <FormGroup>
-            <Label for="artist">Artist</Label>
-              <Input 
-                id='artist'
-                name='artist'
-                placeholder='enter artist name'
-                type="text"
-                onChange={handleChange} 
-                value={editEvent.artist}/>
-          </FormGroup>
-          <FormGroup>
-            <Label for="description">Description</Label>
-              <Input 
-                id='description'
-                name='description'
-                placeholder='Enter description'
-                type="text"
-                onChange={handleChange} 
-                value={editEvent.description}/>
-          </FormGroup>
-          <FormGroup>
-            <Label for="genre">Genre</Label>
-              <Input 
-                id='genre'
-                name='genre'
-                placeholder='Enter genre'
-                type="text"
-                onChange={handleChange} 
-                value={editEvent.genre}/>
-          </FormGroup>
-          <FormGroup>
-            <Label for="image">Image</Label>
-              <Input 
-                id='image'
-                name='image'
-                placeholder='Enter image'
-                type="text"
-                onChange={handleChange} 
-                value={editEvent.image}/>
-          </FormGroup>
-          <FormGroup>
-            <Label for="date">Date</Label>
-              <Input 
-                id='date'
-                name='date'
-                placeholder='dd/mm/yyyy'
-                type="text"
-                onChange={handleChange} 
-                value={newEvent.date}/>
-          </FormGroup>
-          <FormGroup>
-            <Label for="time">Time</Label>
-              <Input 
-                id='time'
-                name='time'
-                placeholder='enter event time'
-                type="text"
-                onChange={handleChange} 
-                value={newEvent.time}/>
-          </FormGroup>
-          <FormGroup>
-            <Label for="venue">Venue</Label>
-              <Input 
-                id='venue'
-                name='venue'
-                placeholder='enter venue name'
-                type="text"
-                onChange={handleChange} 
-                value={newEvent.venue}/>
-          </FormGroup>
-          <FormGroup>
-            <Label for="address">Address</Label>
-              <Input 
-                id='address'
-                name='address'
-                placeholder='enter address'
-                type="text"
-                onChange={handleChange} 
-                value={newEvent.address}/>
-          </FormGroup>
-          <FormGroup>
-            <Label for="city">City</Label>
-              <Input 
-                id='city'
-                name='city'
-                placeholder='enter city'
-                type="text"
-                onChange={handleChange} 
-                value={newEvent.city}/>
-          </FormGroup>
-          <FormGroup>
-            <Label for="state">State</Label>
-              <Input 
-                id='state'
-                name='state'
-                placeholder='enter state'
-                type="text"
-                onChange={handleChange} 
-                value={newEvent.state}/>
-          </FormGroup>
-          <FormGroup>
-            <Label for="price">Ticket Price</Label>
-              <Input 
-                id='price'
-                name='price'
-                placeholder='enter ticket price'
-                type="text"
-                onChange={handleChange} 
-                value={newEvent.price}/>
-          </FormGroup>
-          <Button color="primary">Submit</Button>
-        </Form>      
-      </div>        
+      >
+      <FormGroup>
+        <Label 
+          for="artist">Artist
+        </Label>
+        <Input
+          id="artist"
+          type="text" 
+          name="artist" 
+          placeholder="Enter artist name"
+          onChange={handleChange}
+          value={newEvent.artist}
+        />
+        </FormGroup>
+        <FormGroup>
+        <Label 
+          for="description">Description
+        </Label>
+        <Input
+          id="description"
+          type="text" 
+          name="description" 
+          placeholder="Enter artist description"
+          onChange={handleChange}
+          value={newEvent.description}
+        />
+        </FormGroup>
+        <FormGroup>
+        <Label 
+          for="genre">Genre
+        </Label>
+        <Input 
+          id="genre"
+          type="text" 
+          name="genre" 
+          placeholder="Enter genre"
+          onChange={handleChange}
+          value={newEvent.genre}
+        />
+        </FormGroup>
+        <FormGroup>
+        <Label 
+          for="image">Image
+        </Label>
+        <Input 
+          id="image"
+          type="text" 
+          name="image" 
+          placeholder="Enter image"
+          onChange={handleChange}
+          value={newEvent.image}
+          />
+        </FormGroup>
+        <FormGroup>
+        <Label 
+          for="date">Date
+        </Label>
+        <Input 
+          id="date"
+          type="text" 
+          name="date" 
+          placeholder="dd/mm/yyyy"
+          onChange={handleChange}
+          value={newEvent.date}
+        />
+        </FormGroup>
+        <FormGroup>
+        <Label 
+          for="time">Time
+        </Label>
+        <Input 
+          id="time"
+          type="text" 
+          name="time" 
+          placeholder="Enter event time"
+          onChange={handleChange}
+          value={newEvent.time}
+        />
+        </FormGroup>
+        <FormGroup>
+        <Label 
+          for="venue">Venue
+        </Label>
+        <Input 
+          id="venue"
+          type="text" 
+          name="venue" 
+          placeholder="Enter venue name"
+          onChange={handleChange}
+          value={newEvent.venue}
+        />
+        </FormGroup>
+        <FormGroup>
+        <Label 
+          for="street">Street
+        </Label>
+        <Input 
+          id="street"
+          type="text" 
+          name="street" 
+          placeholder="Enter street"
+          onChange={handleChange}
+          value={newEvent.street}
+        />
+        </FormGroup>
+        <FormGroup>
+        <Label 
+          for="city">City</Label>
+        <Input 
+          id="city"
+          type="text" 
+          name="city" 
+          placeholder="Enter city"
+          onChange={handleChange}
+          value={newEvent.city}
+        />
+        </FormGroup>
+        <FormGroup>
+        <Label 
+          for="state">State
+        </Label>
+        <Input 
+          id="state"
+          type="text" 
+          name="state" 
+          placeholder="Enter state"
+          onChange={handleChange}
+          value={newEvent.state}
+        />
+        </FormGroup>
+        <FormGroup>
+        <Label 
+          for="price">Price</Label>
+        <Input 
+          id="price"
+          type="integer" 
+          name="price" 
+          placeholder="Enter ticket price"
+          onChange={handleChange}
+          value={newEvent.price}
+           />
+      </FormGroup>
+        <Button 
+          color="primary">Submit Event
+        </Button>
+      </Form>           
     </>
   )
 }
