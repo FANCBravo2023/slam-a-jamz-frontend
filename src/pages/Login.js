@@ -25,36 +25,45 @@ const Login = ({ login }) => {
 
   return (
     <>
-    <h1>Sign In</h1>
-        <form 
-        ref={formRef} onSubmit={handleSubmit}>
-          <FormGroup>
-            <Label 
-              for="email">Email
-            </Label> 
-            <Input 
-              id="email"
-              type="email" 
-              name="email" placeholder="email@example.com" 
-            />
-          </FormGroup>
 
-          <FormGroup>
-            <Label for="password">Password
-            </Label>
-            <Input 
-              id="password"
-              type="password" name="password" placeholder="Password" 
-            />
-          </FormGroup>
-          <Button       
-            className="submit-button" type='submit' 
-            value="Login">Login
-          </Button>
-        </form>
+        <div className='login-page'>
+        <h1 className='login-h1'>Sign In</h1>
+          <form 
+            className='login-form'
+          ref={formRef} onSubmit={handleSubmit}>
+            <FormGroup 
+            className='login-form'>
+              <Label 
+                className='login-form'
+                for="email">Email
+              </Label> 
+              <Input 
+                id="email"
+                type="email" 
+                name="email" placeholder="email@example.com" 
+              />
+            </FormGroup>
 
-        <div    
-          className="sign-in-words">Not registered yet? <a href="/signup">Signup Now!</a> 
+            <FormGroup
+            className='login-form'>
+              <Label 
+              className='login-form'
+              for="password">Password
+              </Label>
+              <Input 
+                id="password"
+                type="password" name="password" placeholder="Password" 
+              />
+            </FormGroup>
+            <Button       
+              className="submit-button" type='submit' 
+              value="Login">Login
+            </Button>
+          </form>
+
+          <div    
+            className='login-form'>Not registered yet? <a href="/signup">Signup Now!</a> 
+          </div>
         </div>
     </>
   )

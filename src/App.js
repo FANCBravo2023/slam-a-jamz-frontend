@@ -135,7 +135,7 @@ const App = () => {
         <Route path="/" element={<LandingPage />} />
         <Route path="/login" element={<Login login={login} /> } />
         <Route path="/signup" element={<SignUp signup={signup} /> } />
-        <Route path="/eventindex" element={<EventIndex events={events} />} />
+        <Route path="/eventindex/" element={<EventIndex events={events} />} />
         <Route path="/eventshow/:id" element={<EventShow events={events} />} />
         <Route path="/eventnew" element={<EventNew createEvent={createEvent} currentUser={currentUser} />} />
         <Route path="/eventedit/:id" element={<EventEdit events={events} updateEvent={updateEvent} currentUser={currentUser} deleteEvent={deleteEvent} />} />
