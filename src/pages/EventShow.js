@@ -1,7 +1,7 @@
 import React from "react"
 import { useParams, NavLink } from "react-router-dom"
 // import { Route, Router } from "react-router-dom"
-import { Card, CardImg, CardBody, CardTitle, CardSubtitle, Button } from "reactstrap"
+import { Card, CardImg, CardBody, Progress, CardSubtitle, Button } from "reactstrap"
 
 const EventShow = ({ events }) => {
   const { id } = useParams()
@@ -11,23 +11,29 @@ const EventShow = ({ events }) => {
 
   return (
     <>
-      <div className="event-body">
-        {
-          currentEvent && (
-      
+      <div className="show-page-card-container">
+      <h2 className="artist-name">{currentEvent.artist}</h2>
+      <div className="d-flex justify-content-center align-items-center">
+        {currentEvent && (
       <Card 
-        style={{ width: "60rem" }} className="event-card">
+        className="card"
+        style={{ width: "25rem", marginTop: "50px", padding: "5px", borderRadius: "40px" }} >
         <CardImg 
-          src={currentEvent.image} alt="Artist' image" />
+          className="show-page-img"
+          src={currentEvent.image} alt="Artist' image"
+          style={{ borderTopRightRadius: "30px", borderTopLeftRadius: "30px" }} />
         <CardBody 
-          className="event-text event-font-size">
-      <div className="grid-row">
-      <div className="show-event-info">
-          <CardTitle>
-            <b>{currentEvent.artist}</b>
-          </CardTitle>
+          style={{ borderBottomRightRadius: "30px", borderBottomLeftRadius: "30px" }}
+        >
+        <div className="show-event-info">
+          <Progress
+            animated
+            className="my-3"
+            color="danger"
+            value="25"
+          />  
           <CardSubtitle>
-            {currentEvent.description}
+            Description: {currentEvent.description}
           </CardSubtitle>
           <CardSubtitle>
             {currentEvent.genre}
@@ -41,10 +47,9 @@ const EventShow = ({ events }) => {
           <CardSubtitle>
             {currentEvent.street}, {currentEvent.city}, {currentEvent.state}
           </CardSubtitle>
-          <CardSubtitle>
+          <CardSubtitle >
             ${currentEvent.price}
           </CardSubtitle>
-        </div>
         </div>
         <div className="event-footer">
           <NavLink 
@@ -56,6 +61,7 @@ const EventShow = ({ events }) => {
         </CardBody>
       </Card>
         )}
+      </div>
       </div>
     </>
   )

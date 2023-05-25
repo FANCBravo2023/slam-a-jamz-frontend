@@ -29,12 +29,15 @@ const SignUp = ({signup}) => {
 
     return(
         <>
-        <div className="sign-up-container">
-            <h3>Sign Up</h3>
-          <form ref={formRef} onSubmit={handleSubmit} className="form">
-            <FormGroup>
-            <Label 
-                for="email">Email
+        <div className="sign-up-page">
+            <h1 className='sign-up-h1'>Sign Up</h1>
+          <form ref={formRef} onSubmit={handleSubmit} className='sign-up-form'>
+            <FormGroup
+            className='sign-up-form'
+            >
+            <Label
+                for="email"
+                className='sign-up-form'>Email
             </Label> 
             <Input
                 id="email"
@@ -43,8 +46,10 @@ const SignUp = ({signup}) => {
             />
             </FormGroup>
 
-            <FormGroup>
+            <FormGroup
+            className='sign-up-form'>
             <Label 
+                className='sign-up-form'
                 for="password">Password
             </Label> 
             <Input
@@ -52,8 +57,10 @@ const SignUp = ({signup}) => {
                 type="password" name='password' placeholder="Enter Password" 
             />
             </FormGroup>
-            <FormGroup>
+            <FormGroup
+            className='sign-up-form'>
                 <Label 
+                className='sign-up-form'
                 for="password_confirmation">Password Confirmation
                 </Label> 
             <Input
@@ -70,8 +77,8 @@ const SignUp = ({signup}) => {
           </form>
 
           <div 
-            className="login-container">
-                <span>Already registered?</span>
+            className='sign-up-form'>
+                <span className='sign-up-form'>Already registered?</span>
           <a href="/signin">Sign In</a> </div>
         </div>
         </>

@@ -38,7 +38,7 @@ const Header = ({currentUser, logout}) => {
                 <>
                   <NavItem>
                     <NavLink tag={RRNavLink} to='/eventnew' className='text-white'>
-                      Create Show Listing
+                      Create Show Listing 
                     </NavLink>
                   </NavItem>
                   <NavItem>
@@ -47,12 +47,14 @@ const Header = ({currentUser, logout}) => {
                     </NavLink>
                   </NavItem>
                   <NavItem>
-                    <Button 
-                    color='danger'
-                    onClick={logout}
-                    >
-                      Logout
-                    </Button>
+                    <NavLink className="logout-button" tag={RRNavLink} to="/">   
+                      <Button 
+                      color='danger'
+                      onClick={logout}
+                      >
+                        Logout
+                      </Button>
+                    </NavLink>
                   </NavItem>
                 </>
                 ) : (
