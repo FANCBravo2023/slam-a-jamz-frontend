@@ -23,7 +23,7 @@ const App = () => {
     readEvent()
   }, [])
 
-  const url = "http://localhost:3000"
+  const url = "https://fanc-backend.onrender.com"
 
   const login = (userInfo) => {
     fetch(`${url}/login`, {
