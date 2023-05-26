@@ -3,7 +3,9 @@
   background-color: black;
   color: white;
 }
-
+.carousel-img{
+  z-index: 3;
+}
 /* header */
 .shadow-lg{
   position: sticky;
@@ -77,7 +79,7 @@
 
 /* landing-page */
 .web-features{
-  background-image: linear-gradient(to bottom right, black, #0B3945);
+  background-image: linear-gradient(to top left, #CB5DCD, #4171BF);
   height: 450px;
   width: 70%;
   display: flex;
@@ -89,10 +91,15 @@
   border-radius: 10px;
 }
 
-.web-features p, a {
+.web-features p {
   text-align: center;
   padding: 15px;
   background: transparent;
+}
+.upcoming-events{
+  background: transparent;
+  display: flex;
+  justify-content: center;
 }
 
 .landing-page-h1-h2-h4 {
@@ -106,7 +113,7 @@
 }
 
 .concert-envy-meter{
-  background-image: linear-gradient(to top left, black, #0B3945);
+  background-image: linear-gradient(to top left, #CB5DCD, #4171BF);
   height: 350px;
   width: 60%;
   display: flex;
@@ -119,7 +126,7 @@
 }
 
 .dev-team{
-  background-color: #0B3945;
+  background-image: linear-gradient(to top left, #CB5DCD, #4171BF);
   height: 500px;
   width: 70%;
   margin-left: 15%;
@@ -127,12 +134,15 @@
   border-radius: 10px;
 }
 
+
+
 .dev-container{
-  background-image: linear-gradient(to top left, black, #0B3945);
+  background-image: linear-gradient(to top left, #CB5DCD, #4171BF);
   display: flex;
   margin: 10px;
   justify-content: space-between;
 }
+
 
 .dev{
   height: 380px;
@@ -150,20 +160,40 @@
 /* landing-page  */
 
 /* show-page */
+.show-page-card-container{
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  height: 550px;
+  max-width: 470px;
+  margin-left: 35%;
+  margin-top: 5%;
+  background-image: linear-gradient(to top left, #CB5DCD, #4171BF);
+  border-radius: 40px;
+}
 
 .artist-name{
-  margin-top: 5%;
-  margin-bottom: -40px;
+
+  margin-bottom: -70px;
   margin-left: 38%;
   font-size: 50px;
   font-weight: 500;
 }
-
+.show-page-card{
+  margin-left: 8%;
+  background: transparent;
+  position: relative;
+  top: -4%;
+}
 .card {
   border: 2px solid #fff;
   box-shadow: 0 0 10px #fff;
   animation: neon-glow 3s ease-in-out infinite;
+  width: 25rem;
+  margin-top: 50px;
+  padding: 5px;
 }
+
 
 @keyframes neon-glow {
   0% {
@@ -183,16 +213,27 @@
 
 /* index-page */
 .index-card-container {
+  background-image: linear-gradient(to top left, #CB5DCD, #4171BF);
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  grid-row-gap: 10px;
+  grid-column-gap: 0px;
   justify-items: center;
   align-items: center;
-  max-width: 680px;
+  max-width: 770px;
   margin: 0 auto;
   margin-top: -100px;
-  height: 100vh;
+  height: 100%;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border-radius: 30px;
 }
 
+.index-card{
+  border: 2px solid #fff;
+  box-shadow: 0 0 10px #fff;
+  animation: neon-glow 3s ease-in-out infinite;
+}
 .index-img {
   height: 150px;
   width: 308px;
@@ -212,26 +253,77 @@
 }
 
 .carousel-img{
-  width: 680px;
+  width: 770px;
   height: 350px;
   border-radius: 30px 30px 30px 30px;
+  object-fit: cover;
 }
 .carousel-caption {
   background-color: transparent;
+}
+.carousel-text, p, h3{
+  background: transparent;
 }
 /* index-page */
 /* my-event-page */
 .my-event-page-card-container{
   display: flex;
-  justify-content: center;
   align-items: center;
   flex-wrap: wrap;
+  max-width: 920px;
+  margin-left: 20%;
+  background-image: linear-gradient(to top left, #CB5DCD, #4171BF);
+  border-radius: 40px;
+}
+.my-event-card{
+  max-height: 500px;
+  width: 388px;
+  margin: 35px;
+
+}
+.my-event-page-img{
+  object-fit: cover;
+  height: 200px;
+  width: 100px;
+}
+
+.my-event-title{
+  text-align: center;
+}
+
+.my-event-card-subtitle{
+  height: 30px;
+}
+
+.my-event-buttons{
+  display: flex;
+  justify-content: center;
+  justify-content: space-evenly;
+  background-color: transparent;
+
+
 }
 /* my-event-page */
-
+/* event-new-page */
+.event-new-page-container{
+  display: flex;
+  justify-content: center;
+  width: 80%;
+  margin: auto;
+  padding: 50px;
+  border-radius: 30px;
+  background-image: linear-gradient(to top left, #CB5DCD, #4171BF);
+  margin-top: 50px;
+}
+.event-new-h1{
+  text-align: center;
+}
+.event-new-form{
+  background: transparent;
+}
 /* login-in */
 .login-page{
-  background-image: linear-gradient(to top left, black, #0B3945);
+  background-image: linear-gradient(to top left, #CB5DCD, #4171BF);
   height: 450px;
   width: 40%;
   display: flex;
@@ -242,7 +334,6 @@
   margin-top: 100px;
   border-radius: 10px;
 }
-
 .login-h1{
   background: transparent;
   text-align: center;
@@ -255,7 +346,7 @@
 
 /* sign-up-page */
 .sign-up-page{
-  background-image: linear-gradient(to top left, black, #0B3945);
+  background-image: linear-gradient(to top left, #CB5DCD, #4171BF);
   height: 450px;
   width: 40%;
   display: flex;
