@@ -15,7 +15,57 @@
   width: 200px;
   height: 100px;
 }
+.Home {
+  width: 200px;
+  height: 100px;
+  margin-left: -10px;
+  margin-right: -30px
 
+}
+.Events {
+  width: 200px;
+  height: 100px;
+  margin-left: -10px;
+  margin-right: -30px
+}
+.SignIn {
+  width: 200px;
+  height: 100px;
+  margin-left: -10px;
+  margin-right: -30px
+}
+.SignUp {
+  width: 200px;
+  height: 100px;
+  margin-left: -10px;
+  margin-right: -30px
+}
+.Create {
+  width: 200px;
+  height: 100px;
+  margin-left: -10px;
+  margin-right: -30px
+}
+.MyEv{
+  width: 200px;
+  height: 100px;
+  margin-left: -10px;
+  margin-right: -30px
+}
+.SignOut{
+  width: 200px;
+  height: 100px;
+  margin-left: -75px;
+  margin-right: -30px
+}
+.Save{
+  width: 200px;
+  height: 100px;
+}
+.Delete{
+  width: 200px;
+  height: 100px;
+}
 .plx1 {
   object-fit: cover;
 }

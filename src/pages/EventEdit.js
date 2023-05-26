@@ -1,4 +1,6 @@
 import React, {useState} from 'react'
+import Save from "../assets/Save.jpg"
+import Delete from "../assets/Delete.jpg"
 import { Form, FormGroup, Label, Input, Button } from "reactstrap"
 import {useNavigate, useParams} from "react-router-dom"
 
@@ -185,10 +187,12 @@ import {useNavigate, useParams} from "react-router-dom"
            />
       </FormGroup>
         <Button
-          onClick={handleSubmit} color="primary">Submit Update
+          onClick={handleSubmit} >
+            <img src={Save} alt="Save changes " className="Save" />
         </Button>
         <Button
-          onClick={handleDelete} color="primary">Delete Event
+          onClick={handleDelete} >
+            <img src={Delete} alt="Delete Event " className="Delete" />
         </Button>
       </Form>        
       </div>        
