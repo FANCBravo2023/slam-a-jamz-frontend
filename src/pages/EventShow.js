@@ -11,12 +11,12 @@ const EventShow = ({ events }) => {
 
   return (
     <>
-      <div className="show-page-card-container">
       <h2 className="artist-name">{currentEvent.artist}</h2>
-      <div className="d-flex justify-content-center align-items-center">
+      <div className="show-page-card-container">
+      
         {currentEvent && (
       <Card 
-        className="card"
+        className="show-page-card"
         style={{ width: "25rem", marginTop: "50px", padding: "5px", borderRadius: "40px" }} >
         <CardImg 
           className="show-page-img"
@@ -61,7 +61,6 @@ const EventShow = ({ events }) => {
         </CardBody>
       </Card>
         )}
-      </div>
       </div>
     </>
   )
