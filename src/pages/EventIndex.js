@@ -4,7 +4,6 @@ import { NavLink } from 'react-router-dom'
 
 
   const EventIndex = ({ events }, args) => {
-
     const items = [
       {
         src: 'https://picsum.photos/id/123/1200/400',
@@ -24,6 +23,30 @@ import { NavLink } from 'react-router-dom'
         caption: 'Slide 3',
         key: 3,
       },
+      {
+        src: 'https://picsum.photos/id/678/1200/400',
+        altText: 'Slide 3',
+        caption: 'Slide 3',
+        key: 4,
+      },
+      {
+        src: 'https://picsum.photos/id/678/1200/400',
+        altText: 'Slide 3',
+        caption: 'Slide 3',
+        key: 5,
+      },
+      {
+        src: 'https://picsum.photos/id/678/1200/400',
+        altText: 'Slide 3',
+        caption: 'Slide 3',
+        key: 6,
+      },
+      {
+        src: 'https://picsum.photos/id/678/1200/400',
+        altText: 'Slide 3',
+        caption: 'Slide 3',
+        key: 7,
+      }
     ];
     const [activeIndex, setActiveIndex] = useState(0);
     const [animating, setAnimating] = useState(false);
@@ -43,18 +66,19 @@ import { NavLink } from 'react-router-dom'
       if (animating) return;
       setActiveIndex(newIndex);
     };
-    const slides = items.map((item) => {
+    const slides = events.map((event, index) => {
       return (
         <CarouselItem
+        className='carousel-text'
           onExiting={() => setAnimating(true)}
           onExited={() => setAnimating(false)}
-          key={item.src}
+          key={events[index].id}
         >
-          <img src={item.src} alt={item.altText} className='carousel-img' />
+          <img src={events[index].image} alt={events[index].altText} className='carousel-img' />
           <CarouselCaption
-            className='carousel-caption'
-            captionText={item.caption}
-            captionHeader={item.caption}
+            className='carousel-text'
+            captionText={events[index].venue}
+            captionHeader={events[index].date}
 
           />
         </CarouselItem>
@@ -70,12 +94,14 @@ import { NavLink } from 'react-router-dom'
       {...args}
     >
       <CarouselIndicators
+        className='carousel-text'
         items={items}
         activeIndex={activeIndex}
         onClickHandler={goToIndex}
       />
       {slides}
       <CarouselControl
+        className='carousel-text'
         direction="prev"
         directionText="Previous"
         onClickHandler={previous}
@@ -93,10 +119,10 @@ import { NavLink } from 'react-router-dom'
         events?.map((event, index) => {
         return (
           <Card
-          className='card'
+          className='index-card'
 
         style={{
-          width: "25rem", marginTop: "10px", padding: "5px", borderRadius: "40px",
+           padding: "5px", borderRadius: "40px",
           width: "20rem",
           height: "20rem"
         }}

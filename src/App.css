@@ -102,6 +102,12 @@
   justify-content: center;
 }
 
+.upcoming-events{
+  background: transparent;
+  display: flex;
+  justify-content: center;
+}
+
 .landing-page-h1-h2-h4 {
   text-align: center;
   padding: 15px;
@@ -172,6 +178,19 @@
   border-radius: 40px;
 }
 
+
+.show-page-card-container{
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  height: 550px;
+  max-width: 470px;
+  margin-left: 35%;
+  margin-top: 5%;
+  background-image: linear-gradient(to top left, #CB5DCD, #4171BF);
+  border-radius: 40px;
+}
+
 .artist-name{
 
   margin-bottom: -70px;
@@ -179,12 +198,14 @@
   font-size: 50px;
   font-weight: 500;
 }
+
 .show-page-card{
   margin-left: 8%;
   background: transparent;
   position: relative;
   top: -4%;
 }
+
 .card {
   border: 2px solid #fff;
   box-shadow: 0 0 10px #fff;
@@ -234,6 +255,7 @@
   box-shadow: 0 0 10px #fff;
   animation: neon-glow 3s ease-in-out infinite;
 }
+
 .index-img {
   height: 150px;
   width: 308px;
@@ -261,10 +283,12 @@
 .carousel-caption {
   background-color: transparent;
 }
+
 .carousel-text, p, h3{
   background: transparent;
 }
 /* index-page */
+
 /* my-event-page */
 .my-event-page-card-container{
   display: flex;
@@ -275,16 +299,37 @@
   background-image: linear-gradient(to top left, #CB5DCD, #4171BF);
   border-radius: 40px;
 }
+
 .my-event-card{
   max-height: 500px;
   width: 388px;
   margin: 35px;
 
 }
+
 .my-event-page-img{
   object-fit: cover;
   height: 200px;
   width: 100px;
+
+}
+
+.my-event-title{
+  text-align: center;
+}
+
+.my-event-card-subtitle{
+  height: 30px;
+}
+
+.my-event-buttons{
+  display: flex;
+  justify-content: center;
+  justify-content: space-evenly;
+  background-color: transparent;
+
+
+
 }
 
 .my-event-title{
@@ -304,6 +349,7 @@
 
 }
 /* my-event-page */
+
 /* event-new-page */
 .event-new-page-container{
   display: flex;
@@ -321,6 +367,10 @@
 .event-new-form{
   background: transparent;
 }
+
+
+/* event-new-page */
+
 /* login-in */
 .login-page{
   background-image: linear-gradient(to top left, #CB5DCD, #4171BF);

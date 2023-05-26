@@ -6,18 +6,21 @@ const MyEvents = ({ events, currentUser }) => {
     const myEvents = events?.filter(events => currentUser?.id === events.user_id)
   return(
     <>
+        <h1 className="my-event-title">My event listings</h1>
         <div className="my-event-page-card-container">
-          <h1 className="my-event-title">My event listings</h1>
+
           {myEvents?.map((event, index) => {
             return (
               <Card 
-                style={{ width: "25rem", marginTop: "50px", padding: "5px", borderRadius: "40px" }} 
+              className="my-event-card"
+                style={{ borderRadius: "40px" }} 
               key={index}>
               <CardImg 
                 className="my-event-page-img"
                 src={event.image} alt="Artist' image"
                 style={{ borderTopRightRadius: "30px", borderTopLeftRadius: "30px" }} />
               <CardBody
+                className="event-page-card-body"
                 style={{ borderBottomRightRadius: "30px", borderBottomLeftRadius: "30px" }}> 
               <div className="my-event-info">
                 <CardTitle
@@ -40,7 +43,7 @@ const MyEvents = ({ events, currentUser }) => {
                 <CardSubtitle>
                   {event.street}, {event.city}, {event.state}
                 </CardSubtitle>
-                <CardSubtitle >
+                <CardSubtitle className="my-event-card-subtitle">
                   ${event.price}
                 </CardSubtitle>
                 <div className="my-event-buttons">
@@ -48,13 +51,13 @@ const MyEvents = ({ events, currentUser }) => {
                   to={`/eventshow/${event.id}`}
                   className={"nav-link"}>
                   <Button 
-                    className="event-button">View
+                    >View
                   </Button>
                 </NavLink>
                 <NavLink
                     to={`/eventedit/${event.id}`}>
                   <Button 
-                    className="event-button">Edit
+                    >Edit
                   </Button>
                 </NavLink>
                 </div>
