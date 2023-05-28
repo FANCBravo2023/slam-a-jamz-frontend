@@ -1,29 +1,18 @@
-import { render, screen } from "@testing-library/react"
-import { BrowserRouter } from "react-router-dom"
-import userEvent from "@testing-library/user-event"
-import Header from "../components/Header"
+import React from 'react';
+import { render, screen } from '@testing-library/react';
+import Header from '../components/Header.js';
+import { BrowserRouter } from 'react-router-dom';
 
 describe("<Header />", () => {
-  it("renders without error", () => {
-    
-    render(
-      <BrowserRouter>
-        <Header />
-      </BrowserRouter>
-    )
-  })
- 
-  it("has clickable links", () => {
-    render(
-      <BrowserRouter>
-        <Header />
-      </BrowserRouter>
-    )
-    userEvent.click(screen.getByText("All Events"))
-    expect(screen.getByText("All Events")).toBeInTheDocument()
-    
-    userEvent.click(screen.getByText("Add an Event"))
-    expect(screen.getByText("Add an Event")).toBeInTheDocument()
-  
+	it("renders for the user", () => {
+		render(
+			<BrowserRouter>
+				<Header />
+			</BrowserRouter>
+		)
+    const home = screen.getByRole('img', {name: /Home button/i})
+    expect(home).toBeInTheDocument()
+    const events = screen.getByRole('img', {name: /events button/i})
+    expect(events).toBeInTheDocument()
   })
 })

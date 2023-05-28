@@ -1,20 +1,18 @@
-import { render, screen } from "@testing-library/react"
-import EventShow from "../pages/EventShow"
-import mockEvents from "../mockEvents"
-import { MemoryRouter } from "react-router-dom"
+import React from 'react';
+import { render } from '@testing-library/react';
+import { BrowserRouter } from 'react-router-dom';
+import EventShow from '../pages/EventShow';
 
-describe("<EventShow />", () => {
-  it("renders an event", () => {
+
+describe('EventShow', () => {
+  it('should render the event details correctly', () => {
+
+
     render(
-      <MemoryRouter initalEntries= {
-        ["/eventshow/1"]
-      }>
-        <EventShow events={mockEvents} />
-      </MemoryRouter>
+      <BrowserRouter >
+          <EventShow />
+      </BrowserRouter>
     )
-    
-    const element = screen.getByText("Edit Event Listing")
-    expect(element).toBeInTheDocument()
-    
+    expect.toHaveTextContent(/return to event listings/i);
   })
 })
