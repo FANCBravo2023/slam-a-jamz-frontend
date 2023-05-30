@@ -1,6 +1,6 @@
-import React, { useRef, useState } from 'react'
+import React, { useRef } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { Form, FormGroup, Label, Input, Button} from "reactstrap"
+import { FormGroup, Label, Input} from "reactstrap"
 
 
 const Login = ({ login }) => {
@@ -26,15 +26,15 @@ const Login = ({ login }) => {
   return (
     <>
 
-        <div className='login-page'>
+        <div class="login-siginUp-page">
         <h1 className='login-h1'>Sign In</h1>
           <form 
-            className='login-form'
+            className='event-new-edit-login-signUp-form'
           ref={formRef} onSubmit={handleSubmit}>
             <FormGroup 
-            className='login-form'>
+            className='event-new-edit-login-signUp-form'>
               <Label 
-                className='login-form'
+                className='event-new-edit-login-signUp-form'
                 for="email">Email
               </Label> 
               <Input 
@@ -45,9 +45,9 @@ const Login = ({ login }) => {
             </FormGroup>
 
             <FormGroup
-            className='login-form'>
+            className='event-new-edit-login-signUp-form'>
               <Label 
-              className='login-form'
+              className='event-new-edit-login-signUp-form'
               for="password">Password
               </Label>
               <Input 
@@ -55,14 +55,13 @@ const Login = ({ login }) => {
                 type="password" name="password" placeholder="Password" 
               />
             </FormGroup>
-            <Button       
-              className="submit-button" type='submit' 
+            <button       
+              className="login-signUp-button" type='submit' 
               value="Login">Login
-            </Button>
+            </button>
           </form>
-
           <div    
-            className='login-form'>Not registered yet? <a href="/signup">Signup Now!</a> 
+            className='event-new-edit-login-signUp-form'>Not registered yet? <a href="/signup" className='event-new-edit-login-signUp-form'>Signup Now!</a> 
           </div>
         </div>
     </>

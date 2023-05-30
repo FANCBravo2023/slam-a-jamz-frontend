@@ -25,7 +25,7 @@ const Navigation = ({ currentUser, logout }) => {
               </NavLink>
             </NavItem>
             <NavItem>
-              <Button className="logout-button" onClick={handleClick}>
+              <Button  onClick={handleClick}>
                 Logout
               </Button>
             </NavItem>
@@ -33,11 +33,6 @@ const Navigation = ({ currentUser, logout }) => {
         )}
         {!currentUser && (
           <>
-            <NavItem>
-              <NavLink to="/eventindex" className="nav-link">
-                See More Details
-              </NavLink>
-            </NavItem>
             <NavItem>
               <NavLink to="/signin" className="nav-link">
                 Sign In

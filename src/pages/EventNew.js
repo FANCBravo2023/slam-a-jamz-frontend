@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
-import { Form, FormGroup, Label, Input, Button, Row, Col } from "reactstrap"
+import Save from "../assets/Save.jpg"
+import { Form, FormGroup, Label, Input, Row, Col } from "reactstrap"
 import {useNavigate} from "react-router-dom"
 
 const EventNew = ({ createEvent, currentUser }) => {
@@ -31,21 +32,21 @@ const EventNew = ({ createEvent, currentUser }) => {
 
   return (
     <>
-      <h1 className='event-new-h1'>Create Event Listing</h1>
-      <div className='event-new-page-container'>
+      <h1 className='create-event-h1'>Create Event Listing</h1>
+      <div className='event-new-edit-page-container'>
       <Form
         onSubmit={handleSubmit}
-        className='event-new-form'
+        className='event-new-edit-login-signUp-form'
       >
        <Row
-       className='event-new-form'>
+       className='event-new-edit-login-signUp-form'>
     <Col 
     md={6}
-    className='event-new-form'>
+    className='event-new-edit-login-signUp-form'>
       <FormGroup
-      className='event-new-form'>
+      className='event-new-edit-login-signUp-form'>
         <Label for="artist name"
-        className='event-new-form'>
+        className='event-new-edit-login-signUp-form'>
           Artist
         </Label>
         <Input
@@ -60,11 +61,11 @@ const EventNew = ({ createEvent, currentUser }) => {
     </Col>
     <Col 
     md={4}
-    className='event-new-form'>
+    className='event-new-edit-login-signUp-form'>
       <FormGroup
-      className='event-new-form'>
+      className='event-new-edit-login-signUp-form'>
         <Label for="venue"
-        className='event-new-form'>
+        className='event-new-edit-login-signUp-form'>
           Venue
         </Label>
         <Input
@@ -78,11 +79,11 @@ const EventNew = ({ createEvent, currentUser }) => {
     </Col>
     <Col 
     md={2}
-    className='event-new-form'>
+    className='event-new-edit-login-signUp-form'>
       <FormGroup
-      className='event-new-form'>
+      className='event-new-edit-login-signUp-form'>
         <Label for="genreType"
-        className='event-new-form'>
+        className='event-new-edit-login-signUp-form'>
           Genre
         </Label>
         <Input
@@ -97,9 +98,9 @@ const EventNew = ({ createEvent, currentUser }) => {
     </Col>
   </Row>
   <FormGroup
-  className='event-new-form'>
+  className='event-new-edit-login-signUp-form'>
     <Label for="artistDescription"
-    className='event-new-form'>
+    className='event-new-edit-login-signUp-form'>
       Description
     </Label>
     <Input
@@ -111,9 +112,9 @@ const EventNew = ({ createEvent, currentUser }) => {
     />
   </FormGroup>
   <FormGroup
-  className='event-new-form'>
+  className='event-new-edit-login-signUp-form'>
     <Label for="imageURL"
-    className='event-new-form'>
+    className='event-new-edit-login-signUp-form'>
       Image
     </Label>
     <Input
@@ -125,14 +126,14 @@ const EventNew = ({ createEvent, currentUser }) => {
     />
   </FormGroup>
   <Row
-  className='event-new-form'>
+  className='event-new-edit-login-signUp-form'>
     <Col 
     md={2}
-    className='event-new-form'>
+    className='event-new-edit-login-signUp-form'>
       <FormGroup
-      className='event-new-form'>
+      className='event-new-edit-login-signUp-form'>
         <Label for="date"
-        className='event-new-form'>
+        className='event-new-edit-login-signUp-form'>
           Date
         </Label>
         <Input
@@ -146,11 +147,11 @@ const EventNew = ({ createEvent, currentUser }) => {
     </Col>
     <Col 
     md={2}
-    className='event-new-form'>
+    className='event-new-edit-login-signUp-form'>
       <FormGroup
-      className='event-new-form'>
+      className='event-new-edit-login-signUp-form'>
         <Label for="time"
-        className='event-new-form'>
+        className='event-new-edit-login-signUp-form'>
           Time
         </Label>
         <Input
@@ -164,11 +165,11 @@ const EventNew = ({ createEvent, currentUser }) => {
     </Col>
     <Col 
     md={2}
-    className='event-new-form'>
+    className='event-new-edit-login-signUp-form'>
       <FormGroup
-      className='event-new-form'>
+      className='event-new-edit-login-signUp-form'>
         <Label for="exampleState"
-        className='event-new-form'>
+        className='event-new-edit-login-signUp-form'>
           State
         </Label>
         <Input
@@ -181,11 +182,11 @@ const EventNew = ({ createEvent, currentUser }) => {
     </Col>
     <Col 
     md={2}
-    className='event-new-form'>
+    className='event-new-edit-login-signUp-form'>
       <FormGroup
-      className='event-new-form'>
+      className='event-new-edit-login-signUp-form'>
         <Label for="street"
-        className='event-new-form'>
+        className='event-new-edit-login-signUp-form'>
           Street
         </Label>
         <Input
@@ -198,11 +199,11 @@ const EventNew = ({ createEvent, currentUser }) => {
     </Col>
     <Col 
     md={2}
-    className='event-new-form'>
+    className='event-new-edit-login-signUp-form'>
       <FormGroup
-      className='event-new-form'>
+      className='event-new-edit-login-signUp-form'>
         <Label for="city"
-        className='event-new-form'>
+        className='event-new-edit-login-signUp-form'>
           City
         </Label>
         <Input
@@ -214,11 +215,11 @@ const EventNew = ({ createEvent, currentUser }) => {
       </FormGroup>
     </Col>
     <Col md={2}
-    className='event-new-form'>
+    className='event-new-edit-login-signUp-form'>
       <FormGroup
-      className='event-new-form'>
+      className='event-new-edit-login-signUp-form'>
         <Label for="price"
-        className='event-new-form'>
+        className='event-new-edit-login-signUp-form'>
           Price
         </Label>
         <Input
@@ -231,9 +232,11 @@ const EventNew = ({ createEvent, currentUser }) => {
       </FormGroup>
     </Col>
   </Row>
-        <Button 
-          color="primary">Submit Event
-        </Button>
+    <button
+        className="delete-save-logo"
+        onClick={handleSubmit} >
+        <img src={Save} alt="Save changes " className="delete-save-logo" />
+      </button>
       </Form>       
       </div>    
     </>
