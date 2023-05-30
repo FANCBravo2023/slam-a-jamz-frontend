@@ -171,9 +171,13 @@ Contributions are welcome! Please open an issue or pull request if you have any 
 If you have any questions or feedback, please contact us at [fancbravo2023@gmail.com]
 
 Meet Our Team:
+
 Nguyen Nguyen, Product Manager
+
 Valeria Casilals, Design Lead
+
 Elmer Figueroa, Tech Lead/Anchor
+
 Evelyn Alvarez, Project Manager
 
 ###### Disclaimer: This app is provided "as is" and the author makes no warranties, express or implied, about its functionality or suitability for any particular purpose. The author shall not be liable for any damages arising out of the use of this app.
