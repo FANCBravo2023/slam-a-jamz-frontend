@@ -5,8 +5,7 @@ import background from '../assets/background.jpg'
 import evelyn from '../assets/evelyn.gif'
 import nguyen from '../assets/nguyen.gif'
 import elmer from '../assets/elmer.gif'
-// import monstar4 from '../assets/monstar4.png'
-
+import valeria from '../assets/valeria.gif'
 
 const LandingPage = () => {
   return (
@@ -70,18 +69,19 @@ const LandingPage = () => {
             
             <div className='dev'>
               <img src={evelyn} alt="pic1" className='dev-image1'/>
-              <p>As Project Manager, I oversee all of the internal team communications and the project management boards. I keep the team on track about who is working on what. I create and organize the team Trello board which breaks down each step of a project. I manage the notifications to the necessary members and mentors involved in the project when a task has been completed and is moved to the "swimlane" of the Trello board. I also organize and keep our Slack account active with any updates and pin the appropriate content for a streamlined workflow. I also manage any external resources that is needed or received for the project. At the beginning of each day, I give an overview of what was completed the previous day, any updates or progress made, current objectives we will work on and any future goals that we are aiming to complete.</p>
+              <p>Project Manager, I oversee all of the internal team communications and the project management boards. I keep the team on track about who is working on what. I create and organize the team Trello board which breaks down each step of a project. I manage the notifications to the necessary members and mentors involved in the project when a task has been completed and is moved to the "swimlane" of the Trello board. I also organize and keep our Slack account active with any updates and pin the appropriate content for a streamlined workflow. I also manage any external resources that is needed or received for the project. At the beginning of each day, I give an overview of what was completed the previous day, any updates or progress made, current objectives we will work on and any future goals that we are aiming to complete.</p>
             </div>
             <div className='dev'>
               <img src={nguyen} alt="pic2" className='dev-image2'/>
-              <p>As the Product Manager, I oversee the big-picture of our application. I ensure that we meet all of the requirements that we need included in the project and provide support to the team while navigating on how to keep the team unblocked for a smooth workflow. I also help to manage conversations around large changes to the application and make sure that a README file has all of the necessary information. At the end of each day, we review any progress, updates and blockers that was worked on or needs to be focused on.</p>
+              <p>Product Manager, I oversee the big-picture of our application. I ensure that we meet all of the requirements that we need included in the project and provide support to the team while navigating on how to keep the team unblocked for a smooth workflow. I also help to manage conversations around large changes to the application and make sure that a README file has all of the necessary information. At the end of each day, we review any progress, updates and blockers that was worked on or needs to be focused on.</p>
             </div>
             <div className='dev'>
               <img src={elmer} alt="pic3" className='dev-image3'/>
-              <p>As Tech Lead and Anchor, I take responsibility over the code base and version control of the project. I oversee the technical needs and create the wireframe for the project.  I also manage the Github and merge requests when tasks are completed. Part of being Tech Lead, my understanding of all technical aspects of the code for the application allows me tyo mentor other team members and help with any blockers.  I present any technical blockers at the beginning of each day and make suggestions on how we can get past them.</p>
+              <p>Tech Lead and Anchor, I take responsibility over the code base and version control of the project. I oversee the technical needs and create the wireframe for the project.  I also manage the Github and merge requests when tasks are completed. Part of being Tech Lead, my understanding of all technical aspects of the code for the application allows me tyo mentor other team members and help with any blockers.  I present any technical blockers at the beginning of each day and make suggestions on how we can get past them.</p>
             </div>
             <div className='dev'>
-              {/* <img src={monstar4} alt="pic4" className='dev-image'/> */}
+              <img src={valeria} alt="pic4" className='dev-image4'/>
+              <p>Design Lead, make decisions on the overall look, color scheme, and branding of the project. I possess a good  understanding of the UI/UX needs of the application and the look of wireframes. A lead designer oversees the color schemes and implementation of branding that will be used for the project. I ensure our application provides a streamlined navigation for user experience. I also search across many styling libraries, responsive design tools, and accessibility features that is needed for the project. At the end of each day, I share any user status updates, design features progress and any future design goals that we have worked on.</p>
             </div>
           </div>
         </div>

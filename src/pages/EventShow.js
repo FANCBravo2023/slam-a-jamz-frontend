@@ -44,7 +44,7 @@ const EventShow = ({ events }) => {
             value={counter}
           />  
           <div>
-          <button className="envy-button" onClick={handleIncrease}><img src={like} alt="like button" className="envy-button"/></button>
+            <button className="envy-button" onClick={handleIncrease}><img src={like} alt="like button" className="envy-button"/></button>
             <button className="envy-button" onClick={handleDecrease}><img src={dislike} alt="dislike button" className="envy-button"/></button>
           </div>
           <CardSubtitle>

@@ -6,6 +6,7 @@ import SignUp from "../assets/SignUp.jpg"
 import Create from "../assets/Create.jpg"
 import MyEv from "../assets/MyEv.jpg"
 import SignOut from "../assets/SignOut.jpg"
+import mp3 from "../assets/mp3.mp3"
 import React from 'react'
 import {  
   Navbar,
@@ -29,7 +30,10 @@ const Header = ({currentUser, logout}) => {
         </NavbarBrand>
        
             <Nav className='ms-auto' navbar>
-             
+
+            <audio controls className="mp3">
+              <source src={mp3} type="audio/mpeg" />
+            </audio>
               {currentUser && (
                 <>
                  <NavItem>
