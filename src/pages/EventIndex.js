@@ -46,6 +46,36 @@ import { NavLink } from 'react-router-dom'
         altText: 'Slide 3',
         caption: 'Slide 3',
         key: 7,
+      },
+      {
+        src: 'https://picsum.photos/id/678/1200/400',
+        altText: 'Slide 3',
+        caption: 'Slide 3',
+        key: 8,
+      },
+      {
+        src: 'https://picsum.photos/id/678/1200/400',
+        altText: 'Slide 3',
+        caption: 'Slide 3',
+        key: 9,
+      },
+      {
+        src: 'https://picsum.photos/id/678/1200/400',
+        altText: 'Slide 3',
+        caption: 'Slide 3',
+        key: 10,
+      },
+      {
+        src: 'https://picsum.photos/id/678/1200/400',
+        altText: 'Slide 3',
+        caption: 'Slide 3',
+        key: 11,
+      },
+      {
+        src: 'https://picsum.photos/id/678/1200/400',
+        altText: 'Slide 3',
+        caption: 'Slide 3',
+        key: 12,
       }
     ];
     const [activeIndex, setActiveIndex] = useState(0);
