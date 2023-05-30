@@ -1,5 +1,8 @@
+
 # Title: SLAM-A-JAMZ
-![Slam-a-Jamz Logo](Slam-a-Jamz-logo.pdf.jpg)
+
+![SJLive.jpeg](https://github.com/FANCBravo2023/slam-a-jamz-frontend/blob/main/src/assets/SJLive.jpg)
+
 Slam-A-Jamz is a Music Concert Event App.
 
 # Overview
@@ -111,7 +114,9 @@ To deploy the app to production, we used a hosting service by Render.
 Our Slam-A-Jamz website is located at [live Slam A Jamz website on Render] https://slam-a-jamz.onrender.com/
 
 ### Tech Stack
-![Slam-a-Jamz Tech Stack](Slam_A_Jamz_Tech_Stack.png)
+
+![Slam-a-Jamz Tech Stack](https://github.com/FANCBravo2023/slam-a-jamz-frontend/blob/main/src/assets/Slam_A_Jamz_Tech_Stack.png)
+
 
 Slack - Slack is an instant messaging program designed by Slack Technologies and owned by Salesforce.
 
@@ -171,13 +176,20 @@ Contributions are welcome! Please open an issue or pull request if you have any 
 #### Contact Us
 If you have any questions or feedback, please contact us at [fancbravo2023@gmail.com]
 
-Meet Our Team:
-Nguyen Nguyen, Product Manager
-Valeria Casilals, Design Lead
-Elmer Figueroa, Tech Lead/Anchor
-Evelyn Alvarez, Project Manager
-
 ### License
 This project is licensed under the MIT License.
 
 ###### Disclaimer: This app is provided "as is" and the author makes no warranties, express or implied, about its functionality or suitability for any particular purpose. The author shall not be liable for any damages arising out of the use of this app.
+
+Meet Our Team:
+
+Nguyen Nguyen, Product Manager
+
+Valeria Casilals, Design Lead
+
+Elmer Figueroa, Tech Lead/Anchor
+
+Evelyn Alvarez, Project Manager
+
+###### Disclaimer: This app is provided "as is" and the author makes no warranties, express or implied, about its functionality or suitability for any particular purpose. The author shall not be liable for any damages arising out of the use of this app.
+
