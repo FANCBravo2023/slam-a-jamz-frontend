@@ -29,15 +29,15 @@ const SignUp = ({signup}) => {
 
     return(
         <>
-        <div className="sign-up-page">
-            <h1 className='sign-up-h1'>Sign Up</h1>
-          <form ref={formRef} onSubmit={handleSubmit} className='sign-up-form'>
+        <div className='login-siginUp-page'>
+            <h1 className='signUp-h1'>Sign Up</h1>
+          <form ref={formRef} onSubmit={handleSubmit} className='event-new-edit-login-signUp-form'>
             <FormGroup
-            className='sign-up-form'
+            className='event-new-edit-login-signUp-form'
             >
             <Label
                 for="email"
-                className='sign-up-form'>Email
+                className='event-new-edit-login-signUp-form'>Email
             </Label> 
             <Input
                 id="email"
@@ -47,9 +47,9 @@ const SignUp = ({signup}) => {
             </FormGroup>
 
             <FormGroup
-            className='sign-up-form'>
+            className='event-new-edit-login-signUp-form'>
             <Label 
-                className='sign-up-form'
+                className='event-new-edit-login-signUp-form'
                 for="password">Password
             </Label> 
             <Input
@@ -58,9 +58,9 @@ const SignUp = ({signup}) => {
             />
             </FormGroup>
             <FormGroup
-            className='sign-up-form'>
+            className='event-new-edit-login-signUp-form'>
                 <Label 
-                className='sign-up-form'
+                className='event-new-edit-login-signUp-form'
                 for="password_confirmation">Password Confirmation
                 </Label> 
             <Input
@@ -69,17 +69,16 @@ const SignUp = ({signup}) => {
             />
             </FormGroup>
 
-            <Button 
-            color="primary"
-            className="submit-button" type="submit" 
-            value="Login">Sign Up
-            </Button>        
+            <button       
+              className="login-signUp-button" type='submit' 
+              value="Login">Sign Up
+            </button>      
           </form>
 
           <div 
-            className='sign-up-form'>
-                <span className='sign-up-form'>Already registered?</span>
-          <a href="/signin">Sign In</a> </div>
+            className='event-new-edit-login-signUp-form'>
+                <span className='event-new-edit-login-signUp-form'>Already registered?</span>
+          <a href="/signin" className='event-new-edit-login-signUp-form'>Sign In</a> </div>
         </div>
         </>
     )

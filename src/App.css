@@ -2,214 +2,12 @@
 * {
   background-color: black;
   color: white;
+  box-sizing: border-box;
 }
-.carousel-img{
-  z-index: 3;
-}
-/* header */
-.shadow-lg{
-  position: sticky;
-  top: 0;
-  z-index: 100;
-}
-
-.Logo {
-  width: 200px;
-  height: 100px;
-}
-.Home {
-  width: 200px;
-  height: 100px;
-  margin-left: -10px;
-  margin-right: -20px
-
-}
-.Events {
-  width: 200px;
-  height: 100px;
-  margin-left: -10px;
-  margin-right: -20px
-}
-.SignIn {
-  width: 200px;
-  height: 100px;
-  margin-left: -10px;
-  margin-right: -20px
-}
-.SignUp {
-  width: 200px;
-  height: 100px;
-  margin-left: -10px;
-  margin-right: -30px
-}
-.Create {
-  width: 200px;
-  height: 100px;
-  margin-left: -10px;
-  margin-right: -20px
-}
-.MyEv{
-  width: 200px;
-  height: 100px;
-  margin-left: -10px;
-  margin-right: -30px;
-}
-.SignOut{
-  width: 200px;
-  height: 100px;
-  margin-left: -5px;
-  margin-right: -30px;
-}
-.Save{
-  width: 200px;
-  height: 100px;
-}
-.Delete{
-  width: 200px;
-  height: 100px;
-}
-button{
-  border:none;
-}
-.plx1 {
-  object-fit: cover;
-}
-.background_img {
-  width: 100%;
-  height: 700px;
-}
-/* header */
-
-/* landing-page */
-.web-features{
-  background-image: linear-gradient(to top left, #CB5DCD, #4171BF);
-  height: 450px;
-  width: 70%;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  padding: 15px;
-  margin-left: 15%;
-  margin-top: 100px;
-  border-radius: 10px;
-}
-
-.web-features p {
-  text-align: center;
-  padding: 15px;
-  background: transparent;
-}
-.upcoming-events{
-  background: transparent;
-  display: flex;
-  justify-content: center;
-}
-
-.upcoming-events{
-  background: transparent;
-  display: flex;
-  justify-content: center;
-}
-
-.landing-page-h1-h2-h4 {
-  text-align: center;
-  padding: 15px;
-  background: transparent;
-  font-size: 30px;
-  font-weight: bold;
-  color: #fff;
-  text-shadow: 0 0 20px #00ff00;
-}
-
-.concert-envy-meter{
-  background-image: linear-gradient(to top left, #CB5DCD, #4171BF);
-  height: 350px;
-  width: 60%;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  padding: 15px;
-  margin-top: 50px;
-  margin-left: 20%;
-  border-radius: 10px;
-}
-
-.dev-team{
-  background-image: linear-gradient(to top left, #CB5DCD, #4171BF);
-  height: 500px;
-  width: 70%;
-  margin-left: 15%;
-  margin-top: 50px;
-  border-radius: 10px;
-}
-
-
-
-.dev-container{
-  background-image: linear-gradient(to top left, #CB5DCD, #4171BF);
-  display: flex;
-  margin: 10px;
-  justify-content: space-between;
-}
-
-
-.dev{
-  height: 380px;
-  margin: 10px;
-  text-align: center;
-  padding: 10px;
-  border-radius: 5px;
-}
-
-.dev-image{
-  height: 100px;
-  width: 100px;
-  z-index: 2;
-}
-/* landing-page  */
-
-/* show-page */
-.show-page-card-container{
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  height: 550px;
-  max-width: 470px;
-  margin-left: 35%;
-  margin-top: 5%;
-  background-image: linear-gradient(to top left, #CB5DCD, #4171BF);
-  border-radius: 40px;
-}
-
-
-.show-page-card-container{
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  height: 550px;
-  max-width: 470px;
-  margin-left: 35%;
-  margin-top: 5%;
-  background-image: linear-gradient(to top left, #CB5DCD, #4171BF);
-  border-radius: 40px;
-}
-
-.artist-name{
-
-  margin-bottom: -70px;
-  margin-left: 38%;
-  font-size: 50px;
-  font-weight: 500;
-}
-
-.show-page-card{
-  margin-left: 8%;
-  background: transparent;
-  position: relative;
-  top: -4%;
-}
-
-.card {
+.card,
+.web-features,
+.concert-envy-meter,
+.login-siginUp-page{
   border: 2px solid #fff;
   box-shadow: 0 0 10px #fff;
   animation: neon-glow 3s ease-in-out infinite;
@@ -217,8 +15,6 @@ button{
   margin-top: 50px;
   padding: 5px;
 }
-
-
 @keyframes neon-glow {
   0% {
     border-color: #00ff00;
@@ -233,6 +29,240 @@ button{
     box-shadow: 0 0 10px #F820F4;
   }
 }
+.web-features-h1,
+.web-features-h2,
+.concert-envy-meter-h1,
+.login-h1,
+.signUp-h1,
+.myEvent-h1,
+.create-event-h1,
+.edit-event-h1,
+.fanc { 
+  background-image: linear-gradient(90deg, #CB5DCD, #8748D9, #5E1F77, #307B93, #4171BF);
+  width: 600px;
+  background-clip: text;
+  -webkit-text-stroke-color: transparent;
+  -webkit-text-stroke-width: calc(1em / 16);
+  -webkit-background-clip: text;
+  color: #4171bf19;
+  padding: calc(calc(1em / 16) / 2);
+  letter-spacing: calc(1em / 8);
+}
+/* hover effect */
+.show-page-card,
+.myEvent-show-card,
+.index-card,
+.dev{
+  transition: transform 0.3s ease-in-out;
+}
+.show-page-card:hover,
+.myEvent-show-card:hover,
+.index-card:hover,
+.dev:hover {
+  transform: scale(1.05);
+}
+/* hover effect */
+/* header */
+.shadow-lg{
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+.logo{
+  width: 200px;
+  height: 100px;
+}
+.delete-save-logo{
+  width: 150px;
+  height: 60px;
+  border: none;
+  background: transparent;
+  border-radius: 30px;
+  margin-left: -5px;
+  margin-right: 25px;
+
+}
+.home-event-signIn-create{
+  width: 200px;
+  height: 100px;
+  margin-left: -5px;
+  margin-right: -15px;
+  background: transparent;
+}
+.SignUp-myEvent-signOut {
+  width: 200px;
+  height: 100px;
+  margin-right: -15px;
+  border: none;
+}
+.button{
+  border:none;
+  color: white;
+  margin-top: -1%;
+  height: 30px;
+  border-radius: 15px;
+  background-image: linear-gradient(to top left, #CB5DCD, #4171BF);
+}
+.plx1 {
+  object-fit: cover;
+}
+.background_img {
+  width: 100%;
+  height: 700px;
+}
+/* header */
+
+/* landing-page */
+.web-features {
+  background-image: linear-gradient(to top left, #CB5DCD, #4171BF);
+  height: 450px;
+  width: 70%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 15px;
+  margin-left: 15%;
+  margin-top: 50px;
+  border-radius: 10px;
+}
+.web-features-h2{
+  position: relative;
+  left: 28%;
+  top: -3%;
+  font-size: 40px;
+  font-weight: bold;
+}
+.web-features-h1{
+  position: relative;
+  left: 19%;
+  top: -6%;
+  font-size: 70px;
+  font-weight: bold;
+}
+.web-features p,
+.concert-envy-meter p {
+  text-align: center;
+  padding: 15px;
+  font-size: 20px;
+  background: transparent;
+}
+.my-3{
+  margin-left: 13%;
+  color: #00ff00;
+  width: 75%;
+}
+.concert-envy-meter-h1{
+  position: relative;
+  left: 16%;
+  top: 3%;
+  font-size: 50px;
+  font-weight: bold;
+}
+.concert-envy-meter{
+  background-image: linear-gradient(to top left, #CB5DCD, #4171BF);
+  height: 270px;
+  width: 60%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 15px;
+  margin-top: 50px;
+  margin-left: 20%;
+  border-radius: 10px;
+}
+.dev-container{
+  background-image: linear-gradient(to top left, #CB5DCD, #4171BF);
+  display: flex;
+  margin: 0 100px 0 100px;
+  justify-content: space-between;
+  padding: 10px;
+  border-radius: 10px;
+  border: 2px solid #fff;
+  box-shadow: 0 0 10px #fff;
+  animation: neon-glow 3s ease-in-out infinite;
+}
+.fanc{
+  position: relative;
+  top: 80px;
+  left: 41%;
+  font-size: 40px;
+}
+.dev{
+  height: 1000px;
+  width: 300px;
+  margin: 10px;
+  margin-top: 100px;
+  text-align: center;
+  padding: 10px;
+  border-radius: 10px;
+}
+.dev-image1{
+  margin-left: -10px;
+  width: 300px;
+  object-fit: contain;
+}
+.dev-image2{
+  margin-left: -10px;
+  width: 300px;
+  object-fit: contain;
+  
+}
+.dev-image3{
+  margin-left: -10px;
+  width: 300px;
+  object-fit: contain;
+}
+/* landing-page  */
+
+/* show-page */
+
+.artist-name{
+  position: relative;
+  top: 70px;
+  margin-left: 40%;
+  font-size: 50px;
+  font-weight: 500;
+  font-weight: bold;
+  text-shadow: 0 0 20px #00ff00;
+  background: transparent;
+}
+.show-page-card-container{
+  display: flex;
+  justify-content: center;
+  max-width: 470px;
+  height: 607px;
+  margin-left: 35%;
+
+  background-image: linear-gradient(to top left, #CB5DCD, #4171BF);
+  border-radius: 40px;
+}
+.show-page-card{
+  max-height: 500px;
+  width: 388px;
+  position: relative;
+  top: 25px;
+}
+
+.show-page-button{
+  position: relative;
+  top: 20px;
+  border:none;
+  color: white;
+  height: 30px;
+  border-radius: 15px;
+  background-image: linear-gradient(to top left, #CB5DCD, #4171BF);
+}
+.envy-button{
+
+  height: 30px;
+  width: 100px;
+  background: transparent;
+  object-fit: contain;
+  border: none;
+  margin-bottom: 10px;
+  margin-left: 12%;
+  
+}
 /* show-page */
 
 /* index-page */
@@ -246,21 +276,21 @@ button{
   align-items: center;
   max-width: 770px;
   margin: 0 auto;
-  margin-top: -100px;
+  margin-top: -75px;
   height: 100%;
   padding-top: 20px;
   padding-bottom: 20px;
   border-radius: 30px;
 }
-
 .index-card{
+  margin-top: 15px;
   border: 2px solid #fff;
   box-shadow: 0 0 10px #fff;
   animation: neon-glow 3s ease-in-out infinite;
-}
 
+}
 .index-img {
-  height: 150px;
+  height: 145px;
   width: 308px;
   object-fit: cover;
 }
@@ -276,24 +306,23 @@ button{
   margin-bottom: 120px;
   margin-left: 43%;
 }
-
 .carousel-img{
   width: 770px;
   height: 350px;
   border-radius: 30px 30px 30px 30px;
   object-fit: cover;
+
 }
 .carousel-caption {
   background-color: transparent;
 }
-
 .carousel-text, p, h3{
   background: transparent;
 }
 /* index-page */
 
 /* my-event-page */
-.my-event-page-card-container{
+.myEvent-show-page-card-container{
   display: flex;
   align-items: center;
   flex-wrap: wrap;
@@ -302,59 +331,43 @@ button{
   background-image: linear-gradient(to top left, #CB5DCD, #4171BF);
   border-radius: 40px;
 }
-
-.my-event-card{
+.myEvent-h1{
+  position: relative;
+  left: 39%;
+  top: -3%;
+  font-size: 40px;
+  font-weight: bold;
+  margin-top: 15px;
+  margin-bottom: 50px;
+}
+.myEvent-show-card{
   max-height: 500px;
   width: 388px;
   margin: 35px;
-
 }
-
-.my-event-page-img{
+.myEvent-show-page-img{
   object-fit: cover;
   height: 200px;
   width: 100px;
-
 }
 
-.my-event-title{
-  text-align: center;
-}
-
-.my-event-card-subtitle{
-  height: 30px;
-}
-
-.my-event-buttons{
+.myEvent-show-buttons{
   display: flex;
   justify-content: center;
   justify-content: space-evenly;
   background-color: transparent;
-
-
-
 }
-
-.my-event-title{
-  text-align: center;
-}
-
-.my-event-card-subtitle{
+.myEvent-button{
+  background-image: linear-gradient(to top left, #CB5DCD, #4171BF);
+  width: 100px;
   height: 30px;
-}
-
-.my-event-buttons{
-  display: flex;
-  justify-content: center;
-  justify-content: space-evenly;
-  background-color: transparent;
-
-
+  border-radius: 15px;
+  border: none;
 }
 /* my-event-page */
 
 /* event-new-page */
-.event-new-page-container{
+.event-new-edit-page-container{
   display: flex;
   justify-content: center;
   width: 80%;
@@ -364,60 +377,57 @@ button{
   background-image: linear-gradient(to top left, #CB5DCD, #4171BF);
   margin-top: 50px;
 }
-.event-new-h1{
-  text-align: center;
-}
-.event-new-form{
+.event-new-edit-login-signUp-form{ 
   background: transparent;
-}
-
-
+} 
 /* event-new-page */
 
-/* login-in */
-.login-page{
+/* create-event-page*/
+.create-event-h1,
+.edit-event-h1{
+  position: relative;
+  left: 35%;
+  top: -3%;
+  font-size: 40px;
+  font-weight: bold;
+  margin-top: 50px;
+}
+/* create-event-page*/
+
+/* login-in sign up */
+.login-siginUp-page{ 
   background-image: linear-gradient(to top left, #CB5DCD, #4171BF);
   height: 450px;
   width: 40%;
   display: flex;
   justify-content: center;
   flex-direction: column;
-  padding: 25px;
+  padding: 30px;
   margin-left: 30%;
   margin-top: 100px;
   border-radius: 10px;
+  position: relative;
 }
 .login-h1{
-  background: transparent;
-  text-align: center;
+  font-size: 50px;
+  font-weight: bold;
 }
-
-.login-form {
-  background: transparent;
+.signUp-h1{
+  font-size: 40px;
+  font-weight: bold;
 }
-/* login-in */
-
-/* sign-up-page */
-.sign-up-page{
-  background-image: linear-gradient(to top left, #CB5DCD, #4171BF);
-  height: 450px;
-  width: 40%;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  padding: 25px;
-  margin-left: 30%;
-  margin-top: 100px;
-  border-radius: 10px;
+.login-signUp-button{
+  border:none;
+  color: white;
+  margin-top: -1%;
+  height: 35px;
+  width: 100px;
+  font-weight: 500;
+  font-size: 20x;;
+  border-radius: 20px;
+  background-color: #00a2ed;
 }
-.sign-up-h1{
-  background: transparent;
-  text-align: center;
-}
-.sign-up-form {
-  background: transparent;
-}
-/* sign-up-page */
+/* login-in signUp */
 
 /* footer-page */
 .footer {
@@ -429,12 +439,10 @@ button{
 }
 /* footer-page */
 
-
 /* not-found-page */
 .not_found_video{
   object-fit: cover;
   width: 100%;  
   height: 300px; 
-  z-index: 0;
 } 
 /* not-found-page */

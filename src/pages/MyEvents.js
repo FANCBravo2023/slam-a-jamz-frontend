@@ -6,17 +6,16 @@ const MyEvents = ({ events, currentUser }) => {
     const myEvents = events?.filter(events => currentUser?.id === events.user_id)
   return(
     <>
-        <h1 className="my-event-title">My event listings</h1>
-        <div className="my-event-page-card-container">
-
+        <h1 className='myEvent-h1'>My event listings</h1>
+        <div className="myEvent-show-page-card-container">
           {myEvents?.map((event, index) => {
             return (
               <Card 
-              className="my-event-card"
+              className="myEvent-show-card"
                 style={{ borderRadius: "40px" }} 
               key={index}>
               <CardImg 
-                className="my-event-page-img"
+                className="myEvent-show-page-img"
                 src={event.image} alt="Artist' image"
                 style={{ borderTopRightRadius: "30px", borderTopLeftRadius: "30px" }} />
               <CardBody
@@ -46,19 +45,19 @@ const MyEvents = ({ events, currentUser }) => {
                 <CardSubtitle className="my-event-card-subtitle">
                   ${event.price}
                 </CardSubtitle>
-                <div className="my-event-buttons">
+                <div className="myEvent-show-buttons">
                 <NavLink
                   to={`/eventshow/${event.id}`}
                   className={"nav-link"}>
-                  <Button 
+                  <button className="myEvent-button"
                     >View
-                  </Button>
+                  </button>
                 </NavLink>
                 <NavLink
                     to={`/eventedit/${event.id}`}>
-                  <Button 
+                  <button className="myEvent-button"
                     >Edit
-                  </Button>
+                  </button>
                 </NavLink>
                 </div>
                 </div>

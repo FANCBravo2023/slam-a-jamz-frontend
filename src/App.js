@@ -9,13 +9,13 @@ import LandingPage from './pages/LandingPage'
 import NotFound from './pages/NotFound'
 import Login from './pages/Login'
 import SignUp from './pages/SignUp'
-import { Routes, Route, useNavigate} from 'react-router-dom'
+import { Routes, Route } from 'react-router-dom'
 import MyEvents from './pages/MyEvents'
 import './App.css';
 
 
 const App = () => {
-  const navigate = useNavigate()
+
   const [currentUser, setCurrentUser] = useState(null)
   const [events, setEvents] = useState()
 
@@ -23,7 +23,7 @@ const App = () => {
     readEvent()
   }, [])
 
-  const url = "https://fanc-backend.onrender.com"
+  const url = "http://localhost:3000"
 
   const login = (userInfo) => {
     fetch(`${url}/login`, {

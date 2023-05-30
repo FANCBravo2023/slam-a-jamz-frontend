@@ -1,11 +1,10 @@
 import React from 'react'
 import Plx from "react-plx"
-import { NavLink } from 'react-router-dom'
 import { Progress } from 'reactstrap'
 import background from '../assets/background.jpg'
-// import monstar1 from '../assets/monstar1.png'
-// import monstar2 from '../assets/monstar2.png'
-// import monstar3 from '../assets/monstar3.png'
+import evelyn from '../assets/evelyn.gif'
+import nguyen from '../assets/nguyen.gif'
+import elmer from '../assets/elmer.gif'
 // import monstar4 from '../assets/monstar4.png'
 
 
@@ -50,49 +49,39 @@ const LandingPage = () => {
          <br/>
            
          <div className="web-features">
-           <h1 className='landing-page-h1-h2-h4'>SLAM-A-JAMZ</h1> 
-           <NavLink
-             className="upcoming-events"
-             to={`/eventindex/`}>
-             <button>Upcoming Events</button> 
-           </NavLink>
-          <h2 className='landing-page-h1-h2-h4'>Web App Features</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+           <h1 className='web-features-h1'>SLAM-A-JAMZ</h1> 
+          <h2 className='web-features-h2'>Web App Features</h2>
+          <p>What is Slam A  Jamz? Have you ever wanted to track your favorite artist and the venues they are preforming at or at or as an artist want more control and exposure over the promotion of your music?  Here at Slam A Jamz we offer a range of tools to allow artists the ability to market and promote their upcoming concerts and tours.  Artists can also manage their existing shows, create new show postings, and remove old show content.  As a fan based user, you can view a list of your favorite artist's upcoming releases.</p>
         </div>
 
         <div className="concert-envy-meter">
+        <h2 className='concert-envy-meter-h1'>Concert Envy Meter</h2>
           <Progress
             animated
             className="my-3"
-            color="danger"
-            value="25"
+            value="75"
           /> 
-          <h2 className='landing-page-h1-h2-h4'>Concert Envy Meter</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          <p>Fans can also share their experience by engaging in our applications Concert Envy Meter.  The FOMO is real and your better off being there live.</p>
         </div>
 
-        <div className='dev-team'>
-          <h2 className='landing-page-h1-h2-h4'>Who is FAN*C</h2>
+        <div>
+          <h2 className='fanc'>Who is FAN*C</h2>
           <div className='dev-container'>
+            
             <div className='dev'>
-              {/* <img src={monstar1} alt="pic1" className='dev-image'/> */}
-              <h4 className='landing-page-h1-h2-h4'>Project Manager</h4>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et  </p>
+              <img src={evelyn} alt="pic1" className='dev-image1'/>
+              <p>As Project Manager, I oversee all of the internal team communications and the project management boards. I keep the team on track about who is working on what. I create and organize the team Trello board which breaks down each step of a project. I manage the notifications to the necessary members and mentors involved in the project when a task has been completed and is moved to the "swimlane" of the Trello board. I also organize and keep our Slack account active with any updates and pin the appropriate content for a streamlined workflow. I also manage any external resources that is needed or received for the project. At the beginning of each day, I give an overview of what was completed the previous day, any updates or progress made, current objectives we will work on and any future goals that we are aiming to complete.</p>
             </div>
             <div className='dev'>
-              {/* <img src={monstar2} alt="pic2" className='dev-image'/> */}
-              <h4 className='landing-page-h1-h2-h4'>Product Manager</h4>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim  </p>
+              <img src={nguyen} alt="pic2" className='dev-image2'/>
+              <p>As the Product Manager, I oversee the big-picture of our application. I ensure that we meet all of the requirements that we need included in the project and provide support to the team while navigating on how to keep the team unblocked for a smooth workflow. I also help to manage conversations around large changes to the application and make sure that a README file has all of the necessary information. At the end of each day, we review any progress, updates and blockers that was worked on or needs to be focused on.</p>
             </div>
             <div className='dev'>
-              {/* <img src={monstar3} alt="pic3" className='dev-image'/> */}
-              <h4 className='landing-page-h1-h2-h4'>Tech Lead</h4>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim </p>
+              <img src={elmer} alt="pic3" className='dev-image3'/>
+              <p>As Tech Lead and Anchor, I take responsibility over the code base and version control of the project. I oversee the technical needs and create the wireframe for the project.  I also manage the Github and merge requests when tasks are completed. Part of being Tech Lead, my understanding of all technical aspects of the code for the application allows me tyo mentor other team members and help with any blockers.  I present any technical blockers at the beginning of each day and make suggestions on how we can get past them.</p>
             </div>
             <div className='dev'>
               {/* <img src={monstar4} alt="pic4" className='dev-image'/> */}
-              <h4 className='landing-page-h1-h2-h4'>Design Lead</h4>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud </p>
             </div>
           </div>
         </div>

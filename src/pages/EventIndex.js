@@ -142,7 +142,11 @@ import { NavLink } from 'react-router-dom'
           <CardSubtitle className="mb-2 text-muted" tag="h6">
             Price: ${event.price}
           </CardSubtitle>
-          <NavLink to={`/eventshow/${event.id}`} className="nave-link">See More Details</NavLink>
+          <NavLink to={`/eventshow/${event.id}`} >
+            <button className="button">
+              See More Details
+            </button>
+          </NavLink>
           </CardBody>
         </Card>
         )
