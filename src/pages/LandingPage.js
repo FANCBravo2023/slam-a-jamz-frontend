@@ -7,7 +7,6 @@ import nguyen from '../assets/nguyen.gif'
 import elmer from '../assets/elmer.gif'
 import valeria from '../assets/valeria.gif'
 
-
 const LandingPage = () => {
   return (
     <>
